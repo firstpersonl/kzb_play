@@ -1,0 +1,22 @@
+<!--index.wxml-->
+<import src="../tabbar/tabbar.wxml"/>
+
+<view class='container'>
+  <view class="main_app">
+    <view class="{{index == 0 ? 'first_types types': 'types' }}" wx:for='{{categorys}}' wx:key='item.id' wx:item='item'>
+      <navigator url=''>
+        <view class='category' style="background-image: url({{ item.loaded ? item.img_url :item.img_url_m }});">
+          <view class='category_overlay'>
+              <view class="category_text">
+                <view>{{ item.name }}</view>
+                <view>{{ item.desc }}</view>
+              </view>
+              <view class='play_number'>45</view>
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+</view>
+

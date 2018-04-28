@@ -1,0 +1,66 @@
+/**index.wxss**/
+@import "../tabbar/tabbar.wxss";
+
+.main_app{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: calc(100rpx - 2px);
+}
+
+.first_types{
+  width: 100% !important;
+}
+.main_app .types{
+  width: calc(50% - 1px);
+  height: calc(100vw / 2);
+  /* background-color: #ccc; */
+  margin-bottom: 2px;
+}
+.main_app > .types:last-child{
+    flex-grow: 1;
+}
+.types > navigator{
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.category_overlay {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    transition: background 0.5s;
+    z-index: 1;
+}
+.category{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+.category_text{
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: block;
+  
+}
+.category_text view{
+  padding: 5px;
+  white-space: pre-wrap;
+  max-width: 75%;
+}
+.play_number{
+  padding: 4rpx 10rpx;
+  position: absolute;
+  right: 15rpx;
+  bottom: 20rpx;
+  display: inline;
+  font-size: 30rpx;
+  color: #FFF200;
+  box-shadow:inset 0 0 2px rgba(255,255,255,.8);
+  border-radius: 5rpx;
+  background: #000;
+}

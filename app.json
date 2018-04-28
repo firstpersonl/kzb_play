@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/favoter/favoter",
+    "pages/address/address",
+    "pages/user/user"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "快乐的玩耍",
+    "navigationBarTextStyle": "black",
+    "navigationBarTextAling": "left"
+  }
+}
