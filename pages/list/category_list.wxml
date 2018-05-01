@@ -1,0 +1,15 @@
+<view class='play_list'>
+  <view wx:for="{{dataLists}}">
+    <view class="play">
+      <image class='img' src='{{item.imageurl}}'/>
+      <view class='play_title'>巴黎五个地方的私人拍照</view>
+      <view>
+        <view class='play_time'>
+        <icon class="iconfont icon-shijian" style='font-size: 25rpx'></icon>
+         3h
+        </view>
+        <view class="play_price">435￥</view>
+      </view>
+    </view>
+  </view>
+</view>

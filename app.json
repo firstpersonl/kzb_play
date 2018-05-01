@@ -3,13 +3,15 @@
     "pages/index/index",
     "pages/favoter/favoter",
     "pages/address/address",
-    "pages/user/user"
+    "pages/user/user",
+    "pages/list/category_list"
   ],
   "window": {
-    "backgroundTextStyle": "light",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "快乐的玩耍",
     "navigationBarTextStyle": "black",
-    "navigationBarTextAling": "left"
+    "navigationBarTextAling": "left",
+    "enablePullDownRefresh": true
   }
 }

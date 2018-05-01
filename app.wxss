@@ -1,11 +1,11 @@
 /**app.wxss**/
 @font-face {
   font-family: 'iconfont';  /* project id 646601 */
-  src: url('//at.alicdn.com/t/font_646601_d12m0k9oq7cfpqfr.eot');
-  src: url('//at.alicdn.com/t/font_646601_d12m0k9oq7cfpqfr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_646601_d12m0k9oq7cfpqfr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_646601_d12m0k9oq7cfpqfr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_646601_d12m0k9oq7cfpqfr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_646601_251a3pnq2mtmlsor.eot');
+  src: url('//at.alicdn.com/t/font_646601_251a3pnq2mtmlsor.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_646601_251a3pnq2mtmlsor.woff') format('woff'),
+  url('//at.alicdn.com/t/font_646601_251a3pnq2mtmlsor.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_646601_251a3pnq2mtmlsor.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family:"iconfont" !important;
@@ -14,8 +14,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.icontfont-sm {
+  font-size: 30rpx;
+}
 /*本项目使用的18个图标  */
 .icon-cainixihuan:before{content: '\e652';}
+.icon-shijian:before{content: '\e64d';display: inline-block}
 .icon-dingdan:before{content: '\e645'}
 .icon-yanchurili:before{content: '\e644'}
 .icon-dizhiguanli:before{content: '\e63f'}

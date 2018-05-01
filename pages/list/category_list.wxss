@@ -1,0 +1,28 @@
+.img {
+  height: 300rpx;
+  width: 100%;
+
+}
+.play{
+  width: 98%;
+  margin: 0 auto;
+  border: 1px solid rgb(221, 221, 221);
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.play_title{
+  color: #32aaf7;
+  font-size: 30rpx;
+  padding: 10px 10px 0 10px;
+}
+.play_time{
+  display: inline;
+  padding-left: 10px;
+  font-size: 25rpx;
+  color: #333333;
+}
+.play_price {
+  float: right;
+  padding-right: 10px;
+  color: #00aca7;
+}

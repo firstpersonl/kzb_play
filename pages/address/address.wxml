@@ -1,4 +1,8 @@
 <!--pages/address/address.wxml-->
-<import src="../tabbar/tabbar.wxml"/>
+<!-- <import src="../tabbar/tabbar.wxml"/>
+<import src="../../template/calendar/index.wxml"/>
+<view class="calendar-wrap">
+   <template is="calendar" data="{{...calendar}}" />
+</view>
 
-<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/> -->

@@ -1,2 +1,3 @@
 /* pages/address/address.wxss */
 @import "../tabbar/tabbar.wxss";
+@import '../../template/calendar/index.wxss';
