@@ -1,3 +1,6 @@
+<import src="../../template/page_types/page_types.wxml"/>
+<template is="PageTypes" data="{{hotList:bindData.types,scrollLeft: scrollLeft}}">
+</template>
 <view class='play_list'>
   <view wx:for="{{dataLists}}">
     <view class="play">

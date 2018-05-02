@@ -7,11 +7,10 @@
     "pages/list/category_list"
   ],
   "window": {
-    "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#32aaf7",
     "navigationBarTitleText": "快乐的玩耍",
-    "navigationBarTextStyle": "black",
-    "navigationBarTextAling": "left",
-    "enablePullDownRefresh": true
+    "navigationBarTextStyle": "light",
+    "navigationBarTextAling": "left"
   }
 }

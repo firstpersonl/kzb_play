@@ -1,3 +1,4 @@
+@import "../../template/page_types/page_types.wxss";
 .img {
   height: 300rpx;
   width: 100%;

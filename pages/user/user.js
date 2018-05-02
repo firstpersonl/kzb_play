@@ -1,25 +1,29 @@
 // pages/user/user.js
+var template = require('../tabbar/tabbar.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    userInfo: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    wx.setNavigationBarTitle({
+      title: '个人中心'
+    })
+    template.tabbar("tabBar", 3, this);
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**
@@ -62,5 +66,10 @@ Page({
    */
   onShareAppMessage: function () {
   
+  },
+  kefu: function() {
+    wx.makePhoneCall({
+      phoneNumber: '18980780016' //仅为示例，并非真实的电话号码
+    })
   }
 })

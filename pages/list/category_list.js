@@ -1,3 +1,5 @@
+var typesTemplate = require('../../template/page_types/page_types.js');
+const app = getApp();
 Page({
 
   /**
@@ -82,8 +84,9 @@ Page({
           oldprice: "￥180.00",
         },
       ],
-    })
-
+      itemId: options.categoryId
+    });
+    typesTemplate.typesMain("types", options.categoryId, this, app.globalData.categorys);
   },
   //下拉刷新
   onPullDownRefresh: function () {

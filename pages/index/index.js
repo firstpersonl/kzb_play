@@ -1,6 +1,6 @@
 //index.js
 //引入图片预加载组件
-const ImgLoader = require('../../utils/img-loader.js')
+// const ImgLoader = require('../../utils/img-loader.js')
 var template = require('../tabbar/tabbar.js');
 
 //获取应用实例
@@ -8,92 +8,50 @@ const app = getApp()
 
 Page({
   data: {
-    categorys: [
-      {
-        id: 1,
-        name: 'INSIDRE',
-        desc: 'Handpicked activities just for you',
-        loaded: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Workshops_Classes_No_Shadow.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Workshops_Classes_No_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      },
-      {
-        id: 2,
-        name: 'INSIDRE',
-        loaded: false,
-        desc: 'Handpicked activities just for you', loading: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      },
-      {
-        id: 3,
-        name: 'INSIDRE',
-        desc: 'Handpicked activities just for you',
-        loaded: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Water_Sports_No_Shadow.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Water_Sports_No_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      },
-      {
-        id: 4,
-        name: 'INSIDRE',
-        desc: 'Handpicked activities just for you',
-        loaded: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/vantigo.jpg',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/vantigo.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      },
-      {
-        id: 5,
-        name: 'INSIDRE',
-        desc: 'Handpicked activities just for you',
-        loaded: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/in_the_sky_no_shadow_2x.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/in_the_sky_no_shadow_2x.png?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      },
-      {
-        id: 6,
-        name: 'INSIDRE',
-        desc: 'Handpicked activities just for you',
-        loaded: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Food_Nightlife_Shadow.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Food_Nightlife_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      },
-      {
-        id: 7,
-        name: 'INSIDRE',
-        desc: 'Handpicked activities just for you',
-        loaded: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      },
-      {
-        id: 8,
-        name: 'INSIDRE',
-        desc: 'Handpicked activities just for you',
-        loaded: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png?x-oss-process=image/resize,m_lfit,h_20,w_20'
-      }
-    ]
-    
+    categorys: [],
+    array: [{addName: '成都',id: 'cd001'}, {addName: '上海',id: 'sh002'}],
+    index: 0
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value);
+    // wx.showLoading({
+
+    // })
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
+
+    this.setData({
+      index: e.detail.value
+    })
   },
   onLoad: function() {
     template.tabbar("tabBar", 0, this);//0表示第一个tabbar
-
+    // this.categorys = app.globalData.categorys;
+    this.setData({
+      categorys: app.globalData.categorys
+    })
+    
+    app.globalData.address = { addName: '成都', id: 'cd001' }
     
   },
   onReady: function () {
     //初始化图片预加载组件，并指定统一的加载完成回调
-    this.imgLoader = new ImgLoader(this);
-    this.data.categorys.forEach(item => {
-      this.imgLoader.load(item.img_url, (err, data) => {
-        const imgList = this.data.categorys.map(item => {
-          if (item.img_url == data)
-            item.loaded = true
-          return item
-        })
-        this.setData({ categorys: imgList })
-      })
-    })
+    // this.imgLoader = new ImgLoader(this);
+    // this.data.categorys.forEach(item => {
+    //   this.imgLoader.load(item.img_url, (err, data) => {
+    //     const imgList = this.data.categorys.map(item => {
+    //       if (item.img_url == data)
+    //         item.loaded = true
+    //       return item
+    //     })
+    //     this.setData({ categorys: imgList })
+    //   })
+    // })
+    
   }
-  
 })

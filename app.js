@@ -10,30 +10,86 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
+        console.log(res)
       }
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    address: null,
+    categorys: [
+      {
+        id: 'c1',
+        name: '玩法活动1',
+        desc: 'Handpicked activities just for you',
+        current: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Workshops_Classes_No_Shadow.png',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Workshops_Classes_No_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      },
+      {
+        id: 'c2',
+        name: '玩法活动2',
+        current: false,
+        desc: 'Handpicked activities just for you', loading: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      },
+      {
+        id: 'c3',
+        name: '玩法活动3',
+        desc: 'Handpicked activities just for you',
+        current: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Water_Sports_No_Shadow.png',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Water_Sports_No_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      },
+      {
+        id: 'c4',
+        name: '玩法活动4',
+        desc: 'Handpicked activities just for you',
+        current: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/vantigo.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/vantigo.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      },
+      {
+        id: 'c5',
+        name: '玩法活动5',
+        desc: 'Handpicked activities just for you',
+        current: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/in_the_sky_no_shadow_2x.png',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/in_the_sky_no_shadow_2x.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      },
+      {
+        id: 'c6',
+        name: '玩法活动6',
+        desc: 'Handpicked activities just for you',
+        current: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Food_Nightlife_Shadow.png',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Food_Nightlife_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      },
+      {
+        id: 'c7',
+        name: '玩法活动7',
+        desc: 'Handpicked activities just for you',
+        current: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      },
+      {
+        id: 'c8',
+        name: '玩法活动8',
+        desc: 'Handpicked activities just for you',
+        current: false,
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 45
+      }
+    ]
   }
 })
