@@ -1,6 +1,6 @@
 <template name='PageTypes'>
   <scroll-view class="recommend_scroll_x_box" scroll-x scroll-left='{{scrollLeft}}'>
-        <view id="{{item.id}}" class="recommend_hot_box {{item.current ? 'recommend_hot_box--active' : ''}}" wx:key="{{item.id}}" wx:for="{{hotList}}">
+        <view id="{{item.id}}" class="recommend_hot_box {{item.current ? 'recommend_hot_box--active' : ''}}" wx:key="{{item.id}}" wx:for="{{hotList}}" bindtap='changeCategory' data-category="{{item}}">
           <image src="{{item.img_url}}" class="recommend_hot_image"></image>
           <view class="typs_cover_text"><text>{{item.name}}\n({{item.total}})</text></view>
         </view>

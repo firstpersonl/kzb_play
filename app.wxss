@@ -1,11 +1,11 @@
 /**app.wxss**/
 @font-face {
   font-family: 'iconfont';  /* project id 646601 */
-  src: url('//at.alicdn.com/t/font_646601_mqvwz0esdm6xbt9.eot');
-  src: url('//at.alicdn.com/t/font_646601_mqvwz0esdm6xbt9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_646601_mqvwz0esdm6xbt9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_646601_mqvwz0esdm6xbt9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_646601_mqvwz0esdm6xbt9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.eot');
+  src: url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.woff') format('woff'),
+  url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.svg#iconfont') format('svg');
 }
 .iconfont {
   font-family:"iconfont" !important;
@@ -17,7 +17,16 @@
 .icontfont-sm {
   font-size: 30rpx;
 }
+.icon-spin {
+    -moz-animation: spin 2s infinite linear;
+    -o-animation: spin 2s infinite linear;
+    -webkit-animation: spin 2s infinite linear;
+    animation: spin 2s infinite linear;
+}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 /*本项目使用的18个图标  */
+.icon-cainixihuan:before{content: '\e652';}
+.icon-jiazaizhong1:before{content: '\e6b1';}
 .icon-cainixihuan:before{content: '\e652';}
 .icon-kefu::before{content: '\e628'}
 .icon-jiantouxia::before{content: '\e62e'}
@@ -25,7 +34,7 @@
 .icon-dingdan:before{content: '\e645'}
 .icon-yanchurili:before{content: '\e644'}
 .icon-dizhiguanli:before{content: '\e63f'}
-.icon-sousuo:before{content: '\e632'}
+.icon-sousuo:before{content: '\e632';vertical-align: middle}
 .icon-fenlei::before{content: '\e630'}
 .icon-wode::before{content: '\e62f'}
 .icon-jiantouyou::before{content: '\e62d'}
@@ -63,4 +72,11 @@
   width: 25%;
   text-align: center;
 
+}
+.loding_text{
+  display: block;
+  padding: 15rpx;
+  text-align: center;
+  color: #a7a7a7;
+  font-size: 30rpx;
 }

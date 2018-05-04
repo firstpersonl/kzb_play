@@ -1,0 +1,22 @@
+/* pages/detail/detail.wxss */
+.slide-image{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.swiper{
+   height: 400rpx;
+}
+.party_content{
+  padding: 15px;
+}
+.margin-sm-top{
+  margin-top: 0.5em;
+}
+.margin-sm-buttom{
+  margin-bottom: 0.5em;
+}
+.br{
+    border: 0;
+    border-top: 1px solid #eeeeee;
+}

@@ -7,9 +7,10 @@
 .play{
   width: 98%;
   margin: 0 auto;
-  border: 1px solid rgb(221, 221, 221);
+  /* border: 1px solid rgb(221, 221, 221); */
   margin-bottom: 10px;
-  border-radius: 5px;
+  /* border-radius: 5px; */
+  box-shadow: #ccc 0 5rpx 10rpx;
 }
 .play_title{
   color: #32aaf7;
@@ -21,9 +22,26 @@
   padding-left: 10px;
   font-size: 25rpx;
   color: #333333;
+  line-height: 60rpx;
 }
 .play_price {
   float: right;
   padding-right: 10px;
   color: #00aca7;
+   line-height:60rpx;
+}
+.category_desc{
+  font-size: 35rpx;
+  padding: 15rpx;
+}
+.h2{
+  font-weight: bold;
+}
+.category_n_t{
+  font-size: 25rpx;
+  color: #8a8a8a;
+}
+.play_list .play:last-child {
+  box-shadow: none;
+  margin-bottom: 0;
 }

@@ -4,7 +4,8 @@
     "pages/favoter/favoter",
     "pages/address/address",
     "pages/user/user",
-    "pages/list/category_list"
+    "pages/list/category_list",
+    "pages/detail/detail"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -15,6 +15,7 @@ App({
     })
   },
   globalData: {
+    BASE_PATH: 'https://www.kezhanbang.cn/',
     userInfo: null,
     address: null,
     categorys: [

@@ -1,0 +1,13 @@
+<swiper indicator-dots="{{indicatorDots}}"
+  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='party_content'>
+  <view>治愈系手作一一《初夏》花艺沙龙邀请函</view>
+  <view>借由手作中，那些重复动作和节奏感，重返与自己沟通的安静时刻。完成被日常损耗的灵魂与情感的修复。</view>
+  <view class="margin-sm-top margin-sm-bottom br"></view>
+</view>
