@@ -37,7 +37,7 @@
 }
 
 .pink-color {
-	color: #32aaf7;
+	color: #fff;
 }
 
 .white-color {
@@ -95,7 +95,7 @@
 	height: 50rpx;
 	line-height: 50rpx;
 	opacity: 0.8;
-  color: #32aaf7;
+  color: #fff;
 
 }
 
@@ -119,19 +119,23 @@
 }
 
 .normal-day-color {
-	color: #32aaf7;
+	color: #fff200;
+}
+.normal-day-color .day{
+  border: 1px solid #fff200;
 }
 
 .day-choosed-color {
-	color: #fff;
+	color: #000;
 }
 
 .disable-day-color {
-	color: #ddd;
+	color: #fff;
 }
 
 .disable-day-circle {
-	background-color: #fbfdff;
+	/* background-color: #fbfdff; */
+   border: none !important;
 }
 
 .border-radius {
@@ -142,7 +146,8 @@
 }
 
 .pink-bg {
-	background-color: #ff629a;
+	border: 1px solid #fff200;
+  background: #fff200;
 }
 
 .purple-bg {

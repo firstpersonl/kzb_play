@@ -1,0 +1,23 @@
+@import '../../template/calendar/index.wxss';
+.to_billing{
+  background-color: #fff200;
+  color: #000;
+  width: 95%;
+  margin: 40rpx auto 40rpx auto;
+  text-align: center;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 4px;
+    font-weight: bold;
+}
+.selected{
+  text-align: center;
+  color: #fff;
+  margin-top: 20rpx;
+}
+.selected text{
+  color: #fff200;
+}
+.disable{
+  background-color: #ababab;
+}

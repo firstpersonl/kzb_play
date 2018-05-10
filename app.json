@@ -5,13 +5,15 @@
     "pages/address/address",
     "pages/user/user",
     "pages/list/category_list",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/booknow/booknow",
+    "pages/tickets/tickets"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#32aaf7",
+    "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "快乐的玩耍",
-    "navigationBarTextStyle": "light",
+    "navigationBarTextStyle": "white",
     "navigationBarTextAling": "left"
   }
 }

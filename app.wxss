@@ -1,12 +1,13 @@
 /**app.wxss**/
 @font-face {
   font-family: 'iconfont';  /* project id 646601 */
-  src: url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.eot');
-  src: url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.woff') format('woff'),
-  url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_646601_bgyfn71qm3ivn29.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_646601_sggm5yckf4ijxlxr.eot');
+  src: url('//at.alicdn.com/t/font_646601_sggm5yckf4ijxlxr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_646601_sggm5yckf4ijxlxr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_646601_sggm5yckf4ijxlxr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_646601_sggm5yckf4ijxlxr.svg#iconfont') format('svg');
 }
+
 .iconfont {
   font-family:"iconfont" !important;
   font-size:40rpx;
@@ -25,9 +26,13 @@
 }
 @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
 /*本项目使用的18个图标  */
+.icon-weibiaoti-:before{content: '\e60d';}
 .icon-cainixihuan:before{content: '\e652';}
+.icon-jian:before{content: '\e794';}
+.icon-jia:before{content: '\e633';}
+.icon-dingyue:before{content: '\e640';}
+.icon-piaofang:before{content: '\e600';}
 .icon-jiazaizhong1:before{content: '\e6b1';}
-.icon-cainixihuan:before{content: '\e652';}
 .icon-kefu::before{content: '\e628'}
 .icon-jiantouxia::before{content: '\e62e'}
 .icon-shijian:before{content: '\e64d';display: inline-block}

@@ -1,0 +1,12 @@
+<import src="../../template/calendar/index.wxml"/>
+<view style='background:#000;min-height:100vh;'>
+  <view class="calendar-wrap">
+    <template is="calendar" data="{{...calendar}}" />
+  </view>
+  <view class='selected' wx:if="calendar.selectedDay.length !=0">
+    <view>选中日期：<text>{{calendar.selectedDay[0].year}}/{{calendar.selectedDay[0].month}}/{{calendar.selectedDay[0].day}}</text></view>
+  </view>
+  <view>
+    <navigator url="../tickets/tickets" class="to_billing {{calendar.selectedDay.length == 0?'disable':''}}">下一步</navigator>
+  </view>
+</view>

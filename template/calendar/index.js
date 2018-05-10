@@ -158,10 +158,10 @@ const conf = {
     const { todayTimestamp } = this.data.calendar;
     const thisMonthDays = conf.getThisMonthDays(year, month);
     const selectedDay = this.data.calendar.selectedDay || [{
-      day: curDate,
-      choosed: true,
-      year,
-      month,
+      // day: curDate,
+      // choosed: true,
+      // year,
+      // month,
     }];
     for (let i = 1; i <= thisMonthDays; i++) {
       days.push({
@@ -293,12 +293,12 @@ const conf = {
     this.setData({
       'calendar.curYear': curYear,
       'calendar.curMonth': curMonth,
-      'calendar.selectedDay': [{
-        day: curDate,
-        choosed: true,
-        year: curYear,
-        month: curMonth,
-      }],
+      // 'calendar.selectedDay': [{
+      //   day: curDate,
+      //   choosed: true,
+      //   year: curYear,
+      //   month: curMonth,
+      // }],
       'calendar.todayTimestamp': timestamp,
     });
     conf.calculateEmptyGrids.call(this, curYear, curMonth);

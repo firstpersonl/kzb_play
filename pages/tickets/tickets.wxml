@@ -1,0 +1,18 @@
+<view style='background:#000;min-height:100vh;'>
+<view class='total'>
+  <view class='inline line_h_56'>人数</view>
+  <view class='inline ctrl'>
+    <view class='ctrl_btn'><icon class='iconfont icon-jian'></icon></view>
+    <view><input type='number' class='total_text' value='{{totalTickets}}'></input></view>
+    <view class='ctrl_btn'><icon class='iconfont icon-jia'></icon></view>
+  </view>
+  <view class='line_h_56'>￥468每人</view>
+</view>
+<view class='computer'>
+  <view><text>人数：</text>{{totalTickets}}</view>
+  <view><text>总金额：</text>￥{{totalTickets * 100}}</view>
+</view>
+<view>
+  <navigator url="" class='to_billing'>去支付</navigator>
+</view>
+</view>

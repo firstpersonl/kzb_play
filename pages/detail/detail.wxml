@@ -1,13 +1,61 @@
-<swiper indicator-dots="{{indicatorDots}}"
-  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
-  <block wx:for="{{imgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image"/>
-    </swiper-item>
-  </block>
-</swiper>
+<view class='wrap_detail'>
+  <view class='swiper_wrap'>
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='price'><view>￥ 299</view></view>
+</view>
 <view class='party_content'>
-  <view>治愈系手作一一《初夏》花艺沙龙邀请函</view>
-  <view>借由手作中，那些重复动作和节奏感，重返与自己沟通的安静时刻。完成被日常损耗的灵魂与情感的修复。</view>
+  <view class="party_title">治愈系手作一一《初夏》花艺沙龙邀请函</view>
+  <view class="party_story">借由手作中，那些重复动作和节奏感，重返与自己沟通的安静时刻。完成被日常损耗的灵魂与情感的修复。</view>
+  <view class='ensure'>
+    <view class='ensure_t'>我们向你保证</view>
+    <view><icon class='iconfont icon-dingyue ensure_icon'></icon>即时预定</view>
+    <view><icon class='iconfont icon-piaofang ensure_icon'></icon>栖居族优惠</view>
+    <view class="margin-sm-top margin-sm-bottom br"></view>
+    <view><icon class='iconfont icon-dizhiguanli ensure_icon'></icon>地区：成都</view>
+    <view><icon class='iconfont icon-shijian ensure_icon'></icon>时间：08/05/08</view>
+    <view><icon class='iconfont icon-dingdan ensure_icon'></icon>取消：提前24小时</view>
+  </view>
+  <view class='desc'>
+    <view class='you_will_do'>你会做什么</view>
+    <view class='desc_title'>
+      <view class='ul'>
+        <view class='li'>探索迈阿密日落群岛的运河，在站立的桨板游览中充满乐趣</view>
+        <view class='li'>与专业教练一起工作，他会翻阅桨板的基本信息，以确保您可以舒适地巡游</view>
+        <view class='li'>当太阳落山时，看到迈阿密天际线的美景，橙色的光芒从水中反射出来</view>
+        <view class='li'>充分利用配备LED灯的桨板，当你在桨上时点亮你周围的水</view>
+      </view>
+    </view>
+    <view class="margin-sm-top margin-sm-bottom br"></view>
+    <view class='you_will_do'>包含内容</view>
+    <view class='desc_title'>
+      <view class='ul'>
+        <view class='li'>一小时的导游艺术之旅</view>
+      </view>
+    </view>
+    <view class="margin-sm-top margin-sm-bottom br"></view>
+    <view class='you_will_do'>附加信息</view>
+    <view class='desc_title'>
+      <view class='ul'>
+        <view class='li'>游览完全在户外，所以要准备下雨的可能性。所有旅程在预定时间的五分钟内开始。</view>
+      </view>
+    </view>
+  </view>
   <view class="margin-sm-top margin-sm-bottom br"></view>
+  <view class='location_map'>
+    <view class='you_will_do'><icon class='iconfont icon-dizhiguanli'></icon>地图位置</view>
+    <map id="map" longitude="104.0647600000" latitude="30.5702000000" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>
+  </view>
+  <view class="margin-sm-top margin-sm-bottom br"></view>
+  <view class='cell'>
+    <view bindtap='phonecallevent'><icon class='iconfont icon-weibiaoti-' style='padding-right:10px;'></icon>拨打电话</view>
+  </view>
+</view>
+<view class='book_now'><navigator url='../booknow/booknow?partyId=cd_12347'>立即预定</navigator></view>
 </view>

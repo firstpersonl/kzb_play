@@ -1,4 +1,23 @@
 /* pages/detail/detail.wxss */
+.wrap_detail{
+  background: #000;
+  color: #fff;
+}
+.swiper_wrap{
+  position: relative;
+}
+.price{
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  background-color: rgba(0,0,0,.5);
+}
+.price view{
+  color: #FFF200;
+  font-size: 50rpx; 
+  padding: 10px 5px;
+  border-radius: 3px;
+}
 .slide-image{
     width: 100%;
     display: block;
@@ -11,12 +30,79 @@
   padding: 15px;
 }
 .margin-sm-top{
-  margin-top: 0.5em;
+  margin-top: 1em;
 }
 .margin-sm-buttom{
-  margin-bottom: 0.5em;
+  margin-bottom: 2em;
 }
 .br{
     border: 0;
-    border-top: 1px solid #eeeeee;
+    padding: 5px 0;
+    border-top: 1px solid #CCC;
+    opacity: .5;
+}
+.party_title{
+  font-weight: bold;
+  font-size: 35rpx;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+.party_story{
+  color: #fff;
+  line-height: 1.5;
+  font-size: 32rpx;
+}
+.ensure{
+  line-height: 1.5;
+  font-size: 32rpx;
+}
+.ensure_t{
+    color: #fff200;
+    font-size: 35rpx;
+    margin-top: 15px;
+}
+.ensure_icon{
+  color: #fff200;
+  padding-right: 25rpx; 
+}
+.desc{
+  
+}
+.you_will_do{
+  color: #fff;
+  font-weight: 600;
+  margin:15px 0;
+  font-size: 32rpx;
+}
+.desc_title{
+  font-size: 32rpx;
+}
+.desc_title .ul .li{
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+.book_now{
+  position: sticky;
+  bottom: 10px;
+  background-color: #fff200;
+  color: #000;
+  text-align: center;
+  height: 50px;
+  width: calc(100% - 30px);
+  margin: 0 auto;
+  line-height: 50px;
+  white-space: 2px;
+  border-radius: 4px;
+  z-index: 99999;
+  font-weight: bold;
+}
+.location_map{
+  margin-bottom: 15px;
+  background-color: #000;
+}
+.cell{
+  padding: 10px 15px 50px 15px;
+  text-align: center;
+  color: #fff200;
+  margin-left: -10px;
 }

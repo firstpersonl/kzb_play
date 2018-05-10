@@ -10,12 +10,21 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
+        // wx.request({
+        //   url: this.globalData.BASE_PATH +'/mini_user/login.htm',
+        //   data: {
+        //     code: res.code
+        //   },
+        //   success: function(data) {
+        //     console.log(data)
+        //   }
+        // })
+        // console.log(res)
       }
     })
   },
   globalData: {
-    BASE_PATH: 'https://www.kezhanbang.cn/',
+    BASE_PATH: 'https://www.kezhanbang.cn',
     userInfo: null,
     address: null,
     categorys: [
