@@ -75,7 +75,7 @@ export function isRightSlide(e) {
     }
   }
 }
-
+const app = getApp();
 const conf = {
   /**
 	 * 计算指定月份共多少天
@@ -155,40 +155,70 @@ const conf = {
 	 */
   calculateDays(year, month, curDate) {
     let days = [];
-    const { todayTimestamp } = this.data.calendar;
-    const thisMonthDays = conf.getThisMonthDays(year, month);
-    const selectedDay = this.data.calendar.selectedDay || [{
-      // day: curDate,
-      // choosed: true,
-      // year,
-      // month,
-    }];
-    for (let i = 1; i <= thisMonthDays; i++) {
-      days.push({
-        day: i,
-        choosed: false,
-        year,
-        month,
-      });
-    }
-    days.map(item => {
-      selectedDay.forEach(d => {
-        if (item.day === d.day && item.year === d.year && item.month === d.month) {
-          item.choosed = true;
+    let sureDays = [];
+    const that = this;
+    wx.showLoading({
+      title: '加载中',
+      mask: true
+    })
+    wx.request({
+      url: app.globalData.BASE_PATH + '/mini_data/getDays.htm',
+      data: {
+        partyId: that.data.partyId,
+        month: month,
+        year: year
+      },
+      success: function (result) {
+        sureDays = result.data;
+        wx.hideLoading();
+        const { todayTimestamp } = that.data.calendar;
+        const thisMonthDays = conf.getThisMonthDays(year, month);
+        const selectedDay = that.data.calendar.selectedDay || [];
+        for (let i = 1; i <= thisMonthDays; i++) {
+          days.push({
+            day: i,
+            choosed: false,
+            year,
+            month,
+            disable: true,
+            sureNumber: 0
+          });
         }
-      });
-      const timestamp = new Date(`${item.year}-${item.month}-${item.day}`).getTime();
-      if (this.config.disablePastDay && (timestamp - todayTimestamp < 0)) {
-        item.disable = true;
+        days.map(item => {
+          selectedDay.forEach(d => {
+            if (item.day === d.day && item.year === d.year && item.month === d.month) {
+              item.choosed = true;
+            }
+          });
+
+          sureDays.forEach(d => {
+            if (item.day == d.day) {
+              const timestamp = new Date(`${item.year}-${item.month}-${item.day}`).getTime();
+              if (that.config.disablePastDay && (timestamp - todayTimestamp < 0)) {
+                item.disable = true;
+              } else {
+                item.disable = false;
+                item.sureNumber = d.sureNumber;
+              }
+            }
+          })
+        });
+        const tmp = {
+          'calendar.days': days,
+        };
+        if (curDate) {
+          tmp['calendar.selectedDay'] = selectedDay;
+        }
+        that.setData(tmp);
+      },
+      fail: function () {
+        wx.showLoading({
+          title: '加载失败'
+        });
+        wx.hideLoading();
       }
-    });
-    const tmp = {
-      'calendar.days': days,
-    };
-    if (curDate) {
-      tmp[ 'calendar.selectedDay' ] = selectedDay;
-    }
-    this.setData(tmp);
+    })
+    
   },
   /**
    * 选择上一月

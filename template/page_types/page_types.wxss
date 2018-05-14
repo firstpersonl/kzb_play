@@ -3,7 +3,7 @@
   white-space: nowrap;
   box-sizing: border-box;
   display: flex;
-  margin-bottom: 15rpx;
+  margin-bottom: 10rpx;
 }
 
 ::-webkit-scrollbar {
