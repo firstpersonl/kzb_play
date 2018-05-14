@@ -6,7 +6,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataLists: []
+    dataLists: [],
+    isHideLoadMore: true,
+    pageSize: 6,
+    startRow: 0
   },
   lower() {
     var result = this.data.res;
@@ -48,53 +51,13 @@ Page({
     })
     wx.setNavigationBarTitle({
       title: selectT.name
-    })
+    });
+  
     this.setData({
-      isHideLoadMore: true,
-      dataLists: [
-        {
-          goodId: 7,
-          name: 'OLAY玉兰油精油沐浴露玫瑰滋养二合一450ml',
-          url: 'bill',
-          imageurl: 'https://d2u09083uyrwez.cloudfront.net/api/file/Y7dSDkhBTDCK0UDhuLgo/convert?w=1500',
-          newprice: "￥36.60",
-          oldprice: "￥40.00",
-        },
-        {
-          goodId: 10,
-          name: '兰蔻玫瑰清滢保湿柔肤水嫩肤水化妆水400ml补水保湿温和不刺激',
-          url: 'bill',
-          imageurl: 'https://d2u09083uyrwez.cloudfront.net/api/file/Y7dSDkhBTDCK0UDhuLgo/convert?w=1500',
-          newprice: "￥30.00",
-          oldprice: "￥80.00",
-        }, {
-          goodId: 11,
-          name: 'Lancome/兰蔻清莹柔肤爽肤水/粉水400ml补水保湿玫瑰水化妆水',
-          url: 'bill',
-          imageurl: 'https://d2u09083uyrwez.cloudfront.net/api/file/Y7dSDkhBTDCK0UDhuLgo/convert?w=1500',
-          newprice: "￥30.00",
-          oldprice: "￥80.00",
-        },
-        {
-          goodId: 12,
-          name: '美国CLINIQUE倩碧黄油无油/特效润肤露125ml',
-          url: 'bill',
-          imageurl: 'https://d2u09083uyrwez.cloudfront.net/api/file/U66hdIF3RmGVXmj9inI6/convert?w=1500',
-          newprice: "￥239.00",
-          oldprice: "￥320.00",
-        },
-        {
-          goodId: 13,
-          name: '法国LANCOME兰蔻柔皙轻透隔离防晒乳霜50ML2017年3月到期',
-          url: 'bill',
-          imageurl: 'https://d2u09083uyrwez.cloudfront.net/api/file/U66hdIF3RmGVXmj9inI6/convert?w=1500',
-          newprice: "￥130.00",
-          oldprice: "￥180.00",
-        },
-      ],
       itemId: options.categoryId,
       selectType: selectT
     });
+    this.loadData();
     typesTemplate.typesMain("types", options.categoryId, this, app.globalData.categorys);
   },
   //下拉刷新
@@ -134,27 +97,33 @@ Page({
     this.setData({
       bindData: _bindData,
       scrollLeft: _scrollLeft,
-      selectType: _selectType
+      selectType: _selectType,
+      pageSize: 6,
+      startRow: 0,
+      itemId: _selectType.id
     });
     this.loadData();
   },
   loadData: function() {
     var that = this;
+    that.setData({
+      isHideLoadMore: false
+    })
     wx.request({
-      url: app.globalData.BASE_PATH + 'findAllByCategory',
+      url: app.globalData.BASE_PATH + '/mini_data/party/findAllByType.htm',
       data: {
-        category: 'c3',
-        pageSize: 10,
-        pageNo: 2
+        type: that.data.itemId,
+        pageSize: that.data.pageSize,
+        startRow: that.data.startRow
       },
-      success: function() {
-        that.isHideLoadMore = true;
+      success: function(result) {
         that.setData({
-          isHideLoadMore: true
+          isHideLoadMore: true,
+          dataLists: result.data,
+          startRow: that.data.startRow+1
         })
       },
       fail: function() {
-        that.isHideLoadMore = true;
         that.setData({
           isHideLoadMore: true
         })

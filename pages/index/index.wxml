@@ -3,14 +3,14 @@
 <view class="top_bar">
 
     <view class="section">
-      <picker bindchange="bindPickerChange" value="{{index}}" range='{{array}}' range-key="{{'addName'}}">
-        <view class="picker">{{array[index].addName}}<icon style='padding-left: 10px;font-size: 30rpx;' class='iconfont icon-jiantouxia'></icon></view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range='{{citys}}' range-key="{{'cityName'}}">
+        <view class="picker">{{citys[index].cityName}}<icon style='padding-left: 10px;font-size: 30rpx;' class='iconfont icon-jiantouxia'></icon></view>
       </picker>
     </view>
     <view class='top_bar_s'>
       <input type='text'></input>
       <view class='input_i'>
-      <icon class='iconfont icon-sousuo '></icon>
+      <icon class='iconfont icon-sousuo'></icon>
       </view>
     </view>
 
@@ -19,7 +19,7 @@
   <view class="main_app">
     <view class="{{index == 0 ? 'first_types types': 'types' }}" wx:for='{{categorys}}' wx:key='item.id' wx:item='item'>
       <navigator url='../list/category_list?categoryId={{item.id}}'>
-        <view class='category' style="background-image: url({{item.img_url }});">
+        <view class='category' style="background-image: url({{item.loading ?item.img_url: item.img_url_m }});">
           <view class='category_overlay'>
               <view class="category_text">
                 <view>{{ item.name }}</view>

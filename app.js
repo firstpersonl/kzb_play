@@ -1,10 +1,32 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    // 加载玩法分类数量统计
+    let typeCounts,citys = [];
+    // logs.unshift(Date.now())
+    wx.request({
+      url: this.globalData.BASE_PATH + '/mini_data/city/findAll.htm',
+      success: function(result) {
+        citys = result.data;
+        console.log(citys);
+        wx.setStorage({
+          key: 'citys',
+          data: citys,
+        });
+      }
+    });
+    wx.request({
+      url: this.globalData.BASE_PATH + '/mini_data/party/typeCounts.htm',
+      success: function (result) {
+        typeCounts = result.data;
+        console.log(typeCounts);
+        wx.setStorage({
+          key: 'typeCounts',
+          data: typeCounts,
+        });
+      }
+    });
+    
 
     // 登录
     wx.login({
@@ -29,75 +51,66 @@ App({
     address: null,
     categorys: [
       {
-        id: 'c1',
-        name: '玩法活动1',
-        desc: 'Handpicked activities just for you',
-        current: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Workshops_Classes_No_Shadow.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Workshops_Classes_No_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
-        total: 45
-      },
-      {
-        id: 'c2',
-        name: '玩法活动2',
+        id: 'FOOD',
+        name: '美食',
         current: false,
         desc: 'Handpicked activities just for you', loading: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/FOOD.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/FOOD.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 45
       },
       {
-        id: 'c3',
-        name: '玩法活动3',
+        id: 'NATURAL_LIFE',
+        name: '自然生活',
         desc: 'Handpicked activities just for you',
         current: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Water_Sports_No_Shadow.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Water_Sports_No_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/NATURAL_LIFE.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/NATURAL_LIFE.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 45
       },
       {
-        id: 'c4',
-        name: '玩法活动4',
+        id: 'SPORT',
+        name: '景点',
         desc: 'Handpicked activities just for you',
         current: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/vantigo.jpg',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/vantigo.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/SPORT.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/SPORT.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 45
       },
       {
-        id: 'c5',
-        name: '玩法活动5',
+        id: 'CULTURE_AND_THEME',
+        name: '文化与主题',
         desc: 'Handpicked activities just for you',
         current: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/in_the_sky_no_shadow_2x.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/in_the_sky_no_shadow_2x.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/CULTURE_AND_THEME.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/CULTURE_AND_THEME.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 45
       },
       {
-        id: 'c6',
-        name: '玩法活动6',
+        id: 'PERFORM',
+        name: '表演',
         desc: 'Handpicked activities just for you',
         current: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Food_Nightlife_Shadow.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/Food_Nightlife_Shadow.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/PERFORM.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/PERFORM.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 45
       },
       {
-        id: 'c7',
-        name: '玩法活动7',
+        id: 'MUSIC',
+        name: '音乐会',
         desc: 'Handpicked activities just for you',
         current: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/CultureTheme.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MUSIC.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MUSIC.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 45
       },
       {
-        id: 'c8',
-        name: '玩法活动8',
+        id: 'MOTION',
+        name: '运动',
         desc: 'Handpicked activities just for you',
         current: false,
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MOTION.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MOTION.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 45
       }
     ]

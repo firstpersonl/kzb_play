@@ -11,14 +11,14 @@
           <view class='img_cover'>
             <view class='cover_desc'>
               <view class="play_price">435￥</view>
-              <view class='play_title'>巴黎五个地方的私人拍照dasfdasfdsfsdafdsafsdfd</view>
+              <view class='play_title'>{{item.partyName}}</view>
               <view class='play_favoter'><icon class='iconfont icon-shoucang'></icon></view>
             </view>
           </view>
         </navigator>
       </view>
     </view>
-    <view class='loding_text' hidden="{{!isHideLoadMore}}"><icon class="iconfont icon-jiazaizhong1 icon-spin"></icon></view>  
+    <view class='loding_text' hidden="{{isHideLoadMore}}"><icon class="iconfont icon-jiazaizhong1 icon-spin"></icon></view>  
       <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
   </view>
 </view>

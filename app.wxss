@@ -51,6 +51,7 @@
 
 .container {
   position: relative;
+  background: #000;
 }
 
 
