@@ -1,12 +1,12 @@
 <view style='background:#000;min-height:100vh;'>
 <view class='total'>
-  <view class='inline line_h_56'>人数</view>
-  <view class='inline ctrl'>
-    <view class='ctrl_btn'><icon class='iconfont icon-jian'></icon></view>
-    <view><input type='number' class='total_text' value='{{totalTickets}}'></input></view>
-    <view class='ctrl_btn'><icon class='iconfont icon-jia'></icon></view>
+  <view class='inline'>人数</view>
+  <view class='inline' style='padding: 0 10px;'>
+    <view class='ctrl-icon iconfont icon-jian' bindtap='totalReduce'></view>
+    <view class='total_text'>{{totalTickets}}</view>
+    <view class='ctrl-icon iconfont icon-jia' bindtap='totalAdd'></view>
   </view>
-  <view class='line_h_56'>￥468每人</view>
+  <view class='inline'>￥468每人</view>
 </view>
 <view class='computer'>
   <view><text>人数：</text>{{totalTickets}}</view>

@@ -1,5 +1,6 @@
 <!--index.wxml-->
 <import src="../tabbar/tabbar.wxml"/>
+<view class='index_wrap'>
 <view class="top_bar">
 
     <view class="section">
@@ -18,7 +19,7 @@
 <view class='container'>
   <view class="main_app">
     <view class="{{index == 0 ? 'first_types types': 'types' }}" wx:for='{{categorys}}' wx:key='item.id' wx:item='item'>
-      <navigator url='../list/category_list?categoryId={{item.id}}'>
+      <navigator hover-class='none' url='../list/category_list?categoryId={{item.id}}'>
         <view class='category' style="background-image: url({{item.img_url }});">
           <view class='category_overlay'>
               <view class="category_text">
@@ -33,4 +34,4 @@
   </view>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
 </view>
-
+</view>

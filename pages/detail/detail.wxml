@@ -8,7 +8,7 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class='price'><view>￥ 299</view></view>
+  <view class='price'><view>￥299</view></view>
 </view>
 <view class='party_content'>
   <view class="party_title">治愈系手作一一《初夏》花艺沙龙邀请函</view>

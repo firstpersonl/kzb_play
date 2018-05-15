@@ -40,6 +40,9 @@ Page({
     
   },
   onReady: function () {
+    wx.setScreenBrightness({
+      value: .5,
+    })
     //初始化图片预加载组件，并指定统一的加载完成回调
     // this.imgLoader = new ImgLoader(this);
     // this.data.categorys.forEach(item => {
@@ -53,5 +56,21 @@ Page({
     //   })
     // })
     
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '诗意生活与有趣玩法',
+      path: '/pages/index/index',
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })

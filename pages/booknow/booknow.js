@@ -1,6 +1,6 @@
 // pages/booknow/booknow.js
 import initCalendar, { getSelectedDay, jumpToToday } from '../../template/calendar/index';
-
+const app = getApp();
 Page({
 
   /**
@@ -8,14 +8,17 @@ Page({
    */
   data: {
     totalTickets: 1,
-    partyId: null
+    partyId: null,
+    sureDays:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      partyId: options.partyId
+    })
   },
   onShow: function () {
     const that = this;
@@ -53,5 +56,25 @@ Page({
    */
   jump() {
     jumpToToday();
+  },
+  to_tickets() {
+    if (this.data.calendar.selectedDay.length == 0) {
+      wx.showModal({
+        title: '提示',
+        content: '请选择时间。',
+        confirmColor: '#fff200;',
+        showCancel: false
+      })
+    } else {
+      const selectDay = this.data.calendar.selectedDay[0];
+      selectDay.partyId = this.data.partyId;
+      wx.setStorage({
+        key: 'selectDay',
+        data: selectDay,
+      })
+      wx.navigateTo({
+        url: '../tickets/tickets'
+      })
+    }
   }
 })

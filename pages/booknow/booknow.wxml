@@ -3,10 +3,10 @@
   <view class="calendar-wrap">
     <template is="calendar" data="{{...calendar}}" />
   </view>
-  <view class='selected' wx:if="calendar.selectedDay.length !=0">
+  <view class='selected {{calendar.selectedDay.length ==0?"hiden":""}}'>
     <view>选中日期：<text>{{calendar.selectedDay[0].year}}/{{calendar.selectedDay[0].month}}/{{calendar.selectedDay[0].day}}</text></view>
   </view>
   <view>
-    <navigator url="../tickets/tickets" class="to_billing {{calendar.selectedDay.length == 0?'disable':''}}">下一步</navigator>
+    <button url="../tickets/tickets" bindtap='to_tickets' class="to_billing {{calendar.selectedDay.length == 0?'disable':''}}">下一步</button>
   </view>
 </view>

@@ -1,44 +1,37 @@
 .inline{
   display: inline-block;
 }
+.ctrl-icon {
+  /* line-height: 56px; */
+  display: inline-block;
+  padding: 10px;
+  font-size: 40rpx;
+  font-weight: bold;
+  border: 1px solid #fff200;
+  vertical-align: middle;
+  border-radius: 4px;
+  color: #fff200;
+}
 .total{
   padding: 30px 15px 10px 15px;
   border-bottom: 1px solid #CCC;
   display: flex;
   color: #fff;
   font-size: 32rpx;
-}
-.line_h_56{
-  line-height: 56px;
-  vertical-align: middle;
+  align-items:center;
 }
 .total_text{
-  line-height: 56px;
+  display: inline-block;
   text-align: center;
-  margin: 0 15px;
   color: #fff200;
-  height: 56px;
+  padding: 0 5px;
   width: 30px;
 }
 .ctrl{
-  display: flex;
   justify-content: center;
   width: 50%;
 }
-.ctrl_btn{
-  display: inline-block;
-  vertical-align: middle;
-  text-align: center;
-  padding:  0 15px;
-  line-height: 56px;
-  height: 56px;
-  border: 1px solid #fff200;
-  border-radius: 4px;
-}
-.ctrl_btn icon {
-  color: #fff200;
-  font-weight: bold;
-}
+
 .computer{
   line-height: 1.5;
   padding: 15px 15px;

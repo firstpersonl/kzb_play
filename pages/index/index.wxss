@@ -1,6 +1,8 @@
 /**index.wxss**/
 @import "../tabbar/tabbar.wxss";
-
+.index_wrap{
+  background: #000;
+}
 .main_app{
   display: flex;
   flex-wrap: wrap;

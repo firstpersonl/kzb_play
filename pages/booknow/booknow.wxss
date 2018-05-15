@@ -1,4 +1,7 @@
 @import '../../template/calendar/index.wxss';
+.hiden{
+  display: none;
+}
 .to_billing{
   background-color: #fff200;
   color: #000;

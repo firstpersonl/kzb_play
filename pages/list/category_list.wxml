@@ -4,10 +4,10 @@
     <template is="PageTypes" data="{{hotList:bindData.types,scrollLeft: scrollLeft}}">
     </template>
     <view class='play_list'>
-      <view wx:for="{{dataLists}}" class="play">
-      <navigator url='../detail/detail?partyId={{item.id}}'>
-          <image class='img' src='{{item.imageurl}}'/>
-          
+      
+      <navigator url='../detail/detail?partyId={{item.id}}' hover-class='none' wx:for="{{dataLists}}" wx:key="{{index}}">
+      <view class="play">
+          <image class='img' src='{{item.imageurl}}' mode="widthFix"/>
           <view class='img_cover'>
             <view class='cover_desc'>
               <view class="play_price">435￥</view>
@@ -15,8 +15,8 @@
               <view class='play_favoter'><icon class='iconfont icon-shoucang'></icon></view>
             </view>
           </view>
-        </navigator>
       </view>
+      </navigator>
     </view>
     <view class='loding_text' hidden="{{!isHideLoadMore}}"><icon class="iconfont icon-jiazaizhong1 icon-spin"></icon></view>  
       <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>

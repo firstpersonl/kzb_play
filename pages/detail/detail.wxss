@@ -15,8 +15,9 @@
 .price view{
   color: #FFF200;
   font-size: 50rpx; 
-  padding: 10px 5px;
-  border-radius: 3px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  border: 1px solid inherit;
 }
 .slide-image{
     width: 100%;
