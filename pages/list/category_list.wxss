@@ -1,7 +1,6 @@
 @import "../../template/page_types/page_types.wxss";
 .img {
   height: 400rpx;
-  width: 100%;
 }
 .list_wrap_{
   background: rgba(0, 0, 0, .8);
@@ -66,7 +65,7 @@
   font-size: 25rpx;
   color: #8a8a8a;
 }
-.play_list .play:last-child {
+.play_list navigator :last-child .play{
   box-shadow: none;
   margin-bottom: 0;
 }

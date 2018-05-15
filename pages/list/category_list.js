@@ -8,37 +8,9 @@ Page({
   data: {
     dataLists: [],
     isHideLoadMore: true,
-    pageSize: 6,
-    startRow: 0
-  },
-  lower() {
-    var result = this.data.res;
-
-    var resArr = [];
-    for (let i = 0; i < 10; i++) {
-      resArr.push(i);
-    };
-    var cont = result.concat(resArr);
-    console.log(resArr.length);
-    if (cont.length >= 100) {
-      wx.showToast({ //如果全部加载完成了也弹一个框
-        title: '我也是有底线的',
-        icon: 'success',
-        duration: 300
-      });
-      return false;
-    } else {
-      wx.showLoading({ //期间为了显示效果可以添加一个过度的弹出框提示“加载中”  
-        title: '加载中',
-        icon: 'loading',
-      });
-      setTimeout(() => {
-        this.setData({
-          res: cont
-        });
-        wx.hideLoading();
-      }, 1500)
-    }
+    pageSize: 3,
+    startRow: 0,
+    LoadingComplete: false
   },
   /**
    * 生命周期函数--监听页面加载
@@ -73,7 +45,8 @@ Page({
   },
   //加载更多
   onReachBottom: function () {
-    this.isHideLoadMore = false;
+    if (this.data.LoadingComplete)
+      return;
     this.loadData();
   },
   changeCategory: function(event) {
@@ -100,11 +73,16 @@ Page({
       selectType: _selectType,
       pageSize: 6,
       startRow: 0,
-      itemId: _selectType.id
+      itemId: _selectType.id,
+      dataLists: [],
+      LoadingComplete: false
     });
     this.loadData();
   },
   loadData: function() {
+    wx.showLoading({
+      title: '加载中',
+    })
     var that = this;
     that.setData({
       isHideLoadMore: false
@@ -117,16 +95,37 @@ Page({
         startRow: that.data.startRow
       },
       success: function(result) {
+        if(result.data.length == 0) {
+          that.setData({
+            LoadingComplete: true
+          });
+        }
+        var partys = result.data;
+        wx.hideLoading();
+        partys.forEach(item => {
+          // that.loadImage(item);
+          wx.request({
+            url: app.globalData.BASE_PATH + '/mini_data/party/load_partyCovers.htm',
+            data: {
+              partyId: item.partyId
+            },
+            success: function (res) {
+              const allPartys = that.data.dataLists;
+              item.ossImage = res.data;
+              allPartys.push(item);
+              that.setData({
+                dataLists: allPartys,
+              })
+            }
+          })
+        })
         that.setData({
           isHideLoadMore: true,
-          dataLists: result.data,
-          startRow: that.data.startRow+1
-        })
+          startRow: that.data.startRow + 1
+        });
       },
       fail: function() {
-        that.setData({
-          isHideLoadMore: true
-        })
+        wx.hideLoading();
       }
     })
   }

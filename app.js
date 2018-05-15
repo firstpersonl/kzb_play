@@ -19,7 +19,7 @@ App({
       url: this.globalData.BASE_PATH + '/mini_data/party/typeCounts.htm',
       success: function (result) {
         typeCounts = result.data;
-        console.log(typeCounts);
+        console.log("app.js:"+ typeCounts);
         wx.setStorage({
           key: 'typeCounts',
           data: typeCounts,

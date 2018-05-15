@@ -1,31 +1,14 @@
+const app = getApp();
 Page({
   data: {
-    imgUrls: [
-      'http://pic.kezhanbang.cn:80/28001/index/b37e989e5cd94a3fbbe6fd7dff4318cb.jpg@960w_636h_1c_1e',
-      'http://pic.kezhanbang.cn:80/28001/index/9bf2328709c34821a1529f190913d172.jpg@960w_636h_1c_1e',
-      'http://pic.kezhanbang.cn:80/28001/index/f16a362581f54d5c9fb38c0ff70d11b8.jpg@960w_636h_1c_1e'
-    ],
+    imgUrls: [],
     phonecall: 13551355464,
     indicatorDots: false,
     autoplay: true,
     interval: 3000,
     duration: 500,
-    markers: [{
-      iconPath: "/images/dinwei.png",
-      id: 0,
-      latitude: 30.5702000000,
-      longitude: 104.0647600000,
-      width: 40,
-      height: 40,
-      callout: {
-        content: '环球中心E6-1417',
-        color: '#000',
-        borderRadius: 4,
-        padding: 5,
-        display: 'ALWAYS',
-        textAlign: 'center'
-      }
-    }]
+    partyId: null,
+    party: {}
   },
   regionchange(e) {
     console.log(e.type)
@@ -38,7 +21,67 @@ Page({
   },
   phonecallevent: function () {
     wx.makePhoneCall({
-      phoneNumber: '18980780016' //仅为示例，并非真实的电话号码
+      phoneNumber: this.data.party.phone //仅为示例，并非真实的电话号码
+    })
+  },
+  onLoad: function(options) {
+    console.log(1)
+    this.setData({
+      partyId: options.partyId
+    })
+  },
+  onReady: function() {
+    console.log(2)
+    const that = this;
+    wx.request({
+      url: app.globalData.BASE_PATH + '/mini_data/party/findOneById.htm',
+      data: {
+        partyId: that.data.partyId
+      },
+      success: function (res) {
+        var detail = res.data;
+        var markers = [{
+          iconPath: "/images/dinwei.png",
+          id: 0,
+          latitude: 30.5702000000,
+          longitude: 104.0647600000,
+          width: 40,
+          height: 40,
+          callout: {
+            content: '环球中心E6-1417',
+            color: '#000',
+            borderRadius: 4,
+            padding: 5,
+            display: 'ALWAYS',
+            textAlign: 'center'
+          }
+        }];
+        markers[0].latitude = detail.latitude;
+        markers[0].longitude = detail.longitude;
+        markers[0].callout.content = detail.locationText;
+        detail.markers = markers;
+        that.setData({
+          party: detail
+        });
+        wx.request({
+          url: app.globalData.BASE_PATH + '/mini_data/party/load_partyCovers.htm',
+          data: {
+            partyId: that.data.partyId
+          },
+          success: function(res){
+            const imgUrls = [];
+            res.data.forEach(item => {
+              imgUrls.push(item.src);
+            })
+            // party.ossImage = res.data;
+            that.setData({
+              imgUrls: imgUrls
+            });
+
+          }
+        })
+      }
     })
   }
+
 })

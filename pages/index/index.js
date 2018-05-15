@@ -31,39 +31,45 @@ Page({
     })
   },
   onLoad: function() {
+    console.log("onLoad")
     const that = this;
     template.tabbar("tabBar", 0, this);//0表示第一个tabbar
     // this.categorys = app.globalData.categorys;
-    this.setData({
-      categorys: app.globalData.categorys
-    });
+    var category = app.globalData.categorys;
+    var countTypes;
     wx.getStorage({
-      key: 'citys',
-      success: function(res) {
-        that.setData({
-          citys: res.data
+      key: 'typeCounts',
+      success: function (res) {
+        countTypes = res.data;
+        category.forEach(item => {
+          countTypes.forEach(typec => {
+            if (typec.partyType == item.id)
+              item.total = typec.numberCount;
+          })
         })
-      },
+
+        that.setData({
+          categorys: category
+        });
+        wx.getStorage({
+          key: 'citys',
+          success: function (res) {
+            that.setData({
+              citys: res.data
+            })
+          }
+        })
+      }
     })
-    
-    app.globalData.address = { addName: '成都', id: 'cd001' }
-    
+    console.log(that.data.categorys);
+      
   },
   onShow: function () {
+    console.log("onShow")
+    
+    
     wx.setScreenBrightness({
       value: .5,
-    })
-    //初始化图片预加载组件，并指定统一的加载完成回调
-    this.imgLoader = new ImgLoader(this);
-    this.data.categorys.forEach(item => {
-      this.imgLoader.load(item.img_url, (err, data) => {
-        const imgList = this.data.categorys.map(item => {
-          if (item.img_url == data)
-            item.loading = true;
-          return item
-        })
-        this.setData({ categorys: imgList })
-      })
     })
     
   },
@@ -82,5 +88,21 @@ Page({
         // 转发失败
       }
     }
-  }
+  },
+  onReady: function () {
+    // Do something when page ready.
+  },
+
+  onHide: function () {
+    // Do something when page hide.
+    console.log("onHide")
+  },
+  onUnload: function () {
+    // Do something when page close.
+    console.log("onUnload")
+  },
+  onPullDownRefresh: function () {
+    // Do something when pull down
+    console.log("onPullDownRefresh")
+  },
 })

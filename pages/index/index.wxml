@@ -26,7 +26,7 @@
                 <view>{{ item.name }}</view>
                 <view>{{ item.desc }}</view>
               </view>
-              <view class='play_number'>45</view>
+              <view class='play_number'>{{item.total}}</view>
           </view>
         </view>
       </navigator>

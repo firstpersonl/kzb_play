@@ -5,9 +5,9 @@
     </template>
     <view class='play_list'>
       
-      <navigator url='../detail/detail?partyId={{item.id}}' hover-class='none' wx:for="{{dataLists}}" wx:key="{{index}}">
+      <navigator url='../detail/detail?partyId={{item.partyId}}' hover-class='none' wx:for="{{dataLists}}" wx:key="{{index}}">
       <view class="play">
-          <image class='img' src='{{item.imageurl}}' mode="widthFix"/>
+          <view class='img' style="background-image: url({{item.ossImage[0].src}});"></view>
           <view class='img_cover'>
             <view class='cover_desc'>
               <view class="play_price">435￥</view>
@@ -18,8 +18,7 @@
       </view>
       </navigator>
     </view>
-    <view class='loding_text' hidden="{{isHideLoadMore}}"><icon class="iconfont icon-jiazaizhong1 icon-spin"></icon></view>  
-      <view class="loading complete" hidden="{{!searchLoadingComplete}}">已加载全部</view>
+      <view class="loading complete" hidden="{{LoadingComplete}}">已加载全部</view>
   </view>
 </view>
   
