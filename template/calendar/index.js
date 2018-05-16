@@ -181,7 +181,8 @@ const conf = {
             year,
             month,
             disable: true,
-            sureNumber: 0
+            sureNumber: 0,
+            price: 0
           });
         }
         days.map(item => {
@@ -197,8 +198,11 @@ const conf = {
               if (that.config.disablePastDay && (timestamp - todayTimestamp < 0)) {
                 item.disable = true;
               } else {
-                item.disable = false;
+                item.disable = d.disable;
                 item.sureNumber = d.sureNumber;
+                item.price = d.price;
+                item.partyId = d.partyId;
+                item.id = d.id;
               }
             }
           })

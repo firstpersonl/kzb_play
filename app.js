@@ -1,49 +1,38 @@
 //app.js
 App({
   onLaunch: function () {
-    // 加载玩法分类数量统计
-    let typeCounts,citys = [];
+    // 登录
+    wx.login({
+      success: res => {
+        //发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: this.globalData.BASE_PATH +'/mini_user/login.htm',
+          data: {
+            code: res.code
+          },
+          success: function(data) {
+            console.log(data);
+            wx.setStorage({
+              key: '_sessionid_',
+              data: data.data.session_id,
+            })
+          }
+        })
+        console.log(res)
+      }
+    });
+    let citys = [];
     // logs.unshift(Date.now())
     wx.request({
       url: this.globalData.BASE_PATH + '/mini_data/city/findAll.htm',
-      success: function(result) {
+      success: function (result) {
         citys = result.data;
-        console.log(citys);
         wx.setStorage({
           key: 'citys',
           data: citys,
         });
       }
     });
-    wx.request({
-      url: this.globalData.BASE_PATH + '/mini_data/party/typeCounts.htm',
-      success: function (result) {
-        typeCounts = result.data;
-        console.log("app.js:"+ typeCounts);
-        wx.setStorage({
-          key: 'typeCounts',
-          data: typeCounts,
-        });
-      }
-    });
-    
-
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        // wx.request({
-        //   url: this.globalData.BASE_PATH +'/mini_user/login.htm',
-        //   data: {
-        //     code: res.code
-        //   },
-        //   success: function(data) {
-        //     console.log(data)
-        //   }
-        // })
-        // console.log(res)
-      }
-    })
   },
   globalData: {
     BASE_PATH: 'https://www.kezhanbang.cn',

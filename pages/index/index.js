@@ -37,6 +37,7 @@ Page({
     // this.categorys = app.globalData.categorys;
     var category = app.globalData.categorys;
     var countTypes;
+
     wx.getStorage({
       key: 'typeCounts',
       success: function (res) {
@@ -65,7 +66,27 @@ Page({
       
   },
   onShow: function () {
-    console.log("onShow")
+    // 加载玩法分类数量统计
+    let typeCounts = [];
+    // logs.unshift(Date.now())
+    wx.request({
+      url: app.globalData.BASE_PATH + '/mini_data/party/typeCounts.htm',
+      success: function (result) {
+        typeCounts = result.data;
+        console.log("app.js:" + typeCounts);
+        var category = app.globalData.categorys;
+        category.forEach(item => {
+          typeCounts.forEach(typec => {
+            if (typec.partyType == item.id)
+              item.total = typec.numberCount;
+          })
+        })
+        wx.setStorage({
+          key: 'typeCounts',
+          data: typeCounts,
+        });
+      }
+    });
     
     
     wx.setScreenBrightness({

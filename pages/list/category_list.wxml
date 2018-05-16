@@ -18,7 +18,6 @@
       </view>
       </navigator>
     </view>
-      <view class="loading complete" hidden="{{LoadingComplete}}">已加载全部</view>
   </view>
 </view>
   

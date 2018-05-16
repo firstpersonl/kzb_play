@@ -6,13 +6,16 @@
     <view class='total_text'>{{totalTickets}}</view>
     <view class='ctrl-icon iconfont icon-jia' bindtap='totalAdd'></view>
   </view>
-  <view class='inline'>￥468每人</view>
+  <view class='inline'>￥{{selectDay.price}}每人</view>
 </view>
 <view class='computer'>
   <view><text>人数：</text>{{totalTickets}}</view>
-  <view><text>总金额：</text>￥{{totalTickets * 100}}</view>
+  <view><text>总金额：</text>￥{{totalTickets * selectDay.price}}</view>
+</view>
+<view class='computer'>
+  <view><text>电话：</text><input value='{{phone}}' focus='{{focus}}' bindinput='bindKeyInput' style='border-bottom: 1px solid #ccc'></input></view>
 </view>
 <view>
-  <navigator url="" class='to_billing'>去支付</navigator>
+  <button class='to_billing' bindtap='toPay'>去支付</button>
 </view>
 </view>
