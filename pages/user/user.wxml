@@ -1,6 +1,6 @@
 <import src="../tabbar/tabbar.wxml"/>
-
-<open-data type="userAvatarUrl" class="user_image"></open-data>
+<view class='wrap'>
+  <open-data type="userAvatarUrl" class="user_image"></open-data>
 <open-data type="userNickName" class="user_nickname"></open-data>
 <view class="user_list">
   <view><icon class="iconfont icon-shoucang icon_in_list"/>我的收藏</view>
@@ -8,3 +8,4 @@
   <view  bindtap='kefu'><icon class="iconfont icon-kefu icon_in_list"/>联系客服</view>
 </view>
 <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+</view>

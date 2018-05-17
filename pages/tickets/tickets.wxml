@@ -13,7 +13,7 @@
   <view><text>总金额：</text>￥{{totalTickets * selectDay.price}}</view>
 </view>
 <view class='computer'>
-  <view><text>电话：</text><input value='{{phone}}' focus='{{focus}}' bindinput='bindKeyInput' style='border-bottom: 1px solid #ccc'></input></view>
+  <view><text>电话：</text><input type='number' value='{{phone}}' focus='{{focus}}' bindinput='bindKeyInput' style='border-bottom: 1px solid #ccc'></input></view>
 </view>
 <view>
   <button class='to_billing' bindtap='toPay'>去支付</button>

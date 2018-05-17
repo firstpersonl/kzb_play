@@ -82,6 +82,15 @@ Page({
         })
       }
     })
+  },
+  onShareAppMessage: function () {
+    return {
+      title: this.data.party.partyName,
+      desc: '客栈帮玩法',
+      path: '/pages/detail/detail?partyId=' + this.data.party.partyId
+    }
+  },
+  onshareTimeLine: function() {
   }
 
 })

@@ -9,14 +9,14 @@ function tabbarinit() {
       "selectedIconPath": "/images/category_c.png",
       "text": "发现"
     },
-    {
-      "current": 0,
-      "pagePath": "/pages/address/address",
-      "iconPath": "/images/address.png",
-      "selectedIconPath": "/images/address_c.png",
-      "text": "地方"
+    // {
+    //   "current": 0,
+    //   "pagePath": "/pages/address/address",
+    //   "iconPath": "/images/address.png",
+    //   "selectedIconPath": "/images/address_c.png",
+    //   "text": "地方"
 
-    },
+    // },
     {
       "current": 0,
       "pagePath": "/pages/favoter/favoter",

@@ -131,7 +131,6 @@ Page({
           },
           method: 'POST',
           success: function (result) {
-            console.log(result.data);
             wx.hideLoading();
             wx.requestPayment({
               'timeStamp': result.data.timeStamp,
@@ -140,7 +139,9 @@ Page({
               'signType': 'MD5',
               'paySign': result.data.paySign,
               'success': function (res) {
-                console.log(res)
+                wx.navigateTo({
+                  url: '/pages/pay/pay_success?partyId=' + that.data.selectDay.partyId + '&total=' + that.data.totalTickets
+                })
               },
               'fail': function (res) {
                 console.log(res)

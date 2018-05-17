@@ -8,7 +8,7 @@ Page({
   data: {
     dataLists: [],
     isHideLoadMore: true,
-    pageSize: 3,
+    pageSize: 9,
     startRow: 0,
     LoadingComplete: false
   },
@@ -92,7 +92,8 @@ Page({
       data: {
         type: that.data.itemId,
         pageSize: that.data.pageSize,
-        startRow: that.data.startRow
+        startRow: that.data.startRow,
+        cityId: app.globalData.address
       },
       success: function(result) {
         if(result.data.length == 0) {

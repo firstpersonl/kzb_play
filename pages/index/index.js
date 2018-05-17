@@ -15,80 +15,23 @@ Page({
   bindPickerChange: function (e) {
     console.log('picker发送选择改变，携带值为', e.detail.value);
     console.log('citys-id:' + this.data.citys[e.detail.value].id);
-    // wx.showLoading({
-
-    // })
-    wx.showLoading({
-      title: '加载中',
-    })
-
-    setTimeout(function () {
-      wx.hideLoading()
-    }, 2000)
-
     this.setData({
       index: e.detail.value
     })
+    wx.showLoading({
+      title: '加载中',
+    })
+    app.globalData.address = this.data.citys[e.detail.value].id;
+    this.loadTypeCount();
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 2000)
   },
   onLoad: function() {
-    console.log("onLoad")
-    const that = this;
+    this.loadTypeCount();
     template.tabbar("tabBar", 0, this);//0表示第一个tabbar
-    // this.categorys = app.globalData.categorys;
-    var category = app.globalData.categorys;
-    var countTypes;
-
-    wx.getStorage({
-      key: 'typeCounts',
-      success: function (res) {
-        countTypes = res.data;
-        category.forEach(item => {
-          countTypes.forEach(typec => {
-            if (typec.partyType == item.id)
-              item.total = typec.numberCount;
-          })
-        })
-
-        that.setData({
-          categorys: category
-        });
-        wx.getStorage({
-          key: 'citys',
-          success: function (res) {
-            that.setData({
-              citys: res.data
-            })
-          }
-        })
-      }
-    })
-    console.log(that.data.categorys);
-      
   },
   onShow: function () {
-    // 加载玩法分类数量统计
-    let typeCounts = [];
-    // logs.unshift(Date.now())
-    wx.request({
-      url: app.globalData.BASE_PATH + '/mini_data/party/typeCounts.htm',
-      success: function (result) {
-        typeCounts = result.data;
-        console.log("app.js:" + typeCounts);
-        var category = app.globalData.categorys;
-        category.forEach(item => {
-          typeCounts.forEach(typec => {
-            if (typec.partyType == item.id)
-              item.total = typec.numberCount;
-          })
-        })
-        wx.setStorage({
-          key: 'typeCounts',
-          data: typeCounts,
-        });
-      }
-    });
-    
-    
     wx.setScreenBrightness({
       value: .5,
     })
@@ -126,4 +69,52 @@ Page({
     // Do something when pull down
     console.log("onPullDownRefresh")
   },
+  loadTypeCount: function() {
+    // 加载玩法分类数量统计
+    let typeCounts = [];
+    const that = this;
+    var citys = wx.getStorageSync('citys');
+    that.setData({
+      citys: citys
+    })
+    wx.request({
+      url: app.globalData.BASE_PATH + '/mini_data/party/typeCounts.htm',
+      data: {
+        cityId: citys[that.data.index].id
+      },
+      success: function (result) {
+        typeCounts = result.data;
+        console.log("app.js:" + typeCounts);
+        var category = app.globalData.categorys;
+        category.forEach(item => {
+          if (typeCounts.length == 0) {
+            item.total = 0;
+          }
+          typeCounts.forEach(typec => {
+            if (typec.partyType == item.id)
+              item.total = typec.numberCount;
+          })
+        });
+        wx.setStorageSync('typeCounts', typeCounts)
+      
+        var countTypes;
+        wx.getStorage({
+          key: 'typeCounts',
+          success: function (res) {
+            countTypes = res.data;
+            category.forEach(item => {
+              countTypes.forEach(typec => {
+                if (typec.partyType == item.id)
+                  item.total = typec.numberCount;
+              })
+            })
+            that.setData({
+              categorys: category
+            });
+            
+          }
+        })
+      }
+    });
+  }
 })

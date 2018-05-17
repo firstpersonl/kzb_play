@@ -1,40 +1,7 @@
 
 //初始化数据
 function types() {
-  return [
-    {
-      pic: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
-      title: '玻璃棧道',
-      desc: '22W人去過',
-      current: false,
-      id: 5
-    }, {
-      pic: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
-      title: '玻璃棧道',
-      desc: '22W人去過',
-      current: false,
-      id: 4
-    }, {
-      pic: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
-      title: '玻璃棧道',
-      desc: '22W人去過',
-      current: false,
-      id: 3
-    }, {
-      pic: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
-      title: '玻璃棧道',
-      desc: '22W人去過',
-      current: false
-      ,
-      id: 2
-    }, {
-      pic: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/demo/boats2.png',
-      title: '玻璃棧道',
-      desc: '22W人去過',
-      current: false,
-      id: 1
-    }
-  ]
+  return []
 
 }
 //types 主入口
