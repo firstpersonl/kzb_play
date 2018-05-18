@@ -32,10 +32,7 @@ Page({
     template.tabbar("tabBar", 0, this);//0表示第一个tabbar
   },
   onShow: function () {
-    wx.setScreenBrightness({
-      value: .5,
-    })
-    
+
   },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {

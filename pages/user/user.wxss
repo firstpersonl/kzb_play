@@ -30,7 +30,7 @@
 }
 .user_list view{
   border-bottom: 1px solid #bfbfbf; 
-  padding: 10rpx 0;
+  padding: 20rpx 0;
   line-height: 40rpx;
 }
 .icon_in_list{

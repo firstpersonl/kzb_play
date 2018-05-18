@@ -1,18 +1,53 @@
 // pages/favoter/favoter.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    dataLists: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    const that = this;
+    wx.request({
+      url: app.globalData.BASE_PATH + '/mini_data/favoter/findAll.htm',
+      data: {
+        sessionId: wx.getStorageSync('_sessionid_')
+      },
+      success: function (res) {
+        var favoters = res.data;
+        favoters.forEach(item => {
+          wx.request({
+            url: app.globalData.BASE_PATH + '/mini_data/party/findOneById.htm',
+            data: {
+              partyId: item.partyId
+            },
+            success: function(res) {
+              var partys = that.data.dataLists;
+              var party = res.data;
+              wx.request({
+                url: app.globalData.BASE_PATH + '/mini_data/party/load_partyCovers.htm',
+                data: {
+                  partyId: party.partyId
+                },
+                success: function (res) {
+                  party.ossImage = res.data;
+                  partys.push(party);
+                  that.setData({
+                    dataLists: partys,
+                  })
+                }
+              })
+            }
+          })
+        })
+      } 
+    })
   },
 
   /**
@@ -26,7 +61,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    wx.setTopBarText({
+      text: '我的收藏',
+    })
   },
 
   /**

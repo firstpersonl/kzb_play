@@ -8,12 +8,13 @@
     "pages/detail/detail",
     "pages/booknow/booknow",
     "pages/tickets/tickets",
-    "pages/pay/pay_success"
+    "pages/pay/pay_success",
+    "pages/orders/orders"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "快乐的玩耍",
+    "navigationBarTitleText": "诗意生活与有趣玩法",
     "navigationBarTextStyle": "white",
     "navigationBarTextAling": "left"
   }

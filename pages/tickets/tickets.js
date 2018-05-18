@@ -108,7 +108,20 @@ Page({
     const that = this;
     var sessionId;
     if(!that.data.phone) {
+      wx.showToast({
+        title: '输入电话号码',
+        icon: 'none',
+        duration: 2000
+      })
       that.bindFocus();
+      return;
+    }
+    if (!(/^1[34578]\d{9}$/.test(that.data.phone))){
+      wx.showToast({
+        title: '检查电话号码',
+        icon: 'none',
+        duration: 2000
+      })
       return;
     }
     wx.getStorage({

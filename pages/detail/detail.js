@@ -91,6 +91,32 @@ Page({
     }
   },
   onshareTimeLine: function() {
+  },
+  favoter: function () {
+    const that =this;
+    wx.request({
+      url: app.globalData.BASE_PATH + '/mini_data/favoter/exits.htm',
+      data: {
+        openId: wx.getStorageSync('_sessionid_'),
+        partyId: that.data.partyId
+      },
+      success: function (res) {
+        console.info(res.data)
+        if (res.data == 'SUCCESS') {
+          wx.showToast({
+            title: '收藏成功',
+            icon: 'success',
+            duration: 1000
+          })
+        } else {
+          wx.showToast({
+            title: '已收藏',
+            icon: 'success',
+            duration: 1000
+          })
+        }
+      }
+    })
   }
 
 })

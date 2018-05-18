@@ -1,5 +1,4 @@
 // pages/user/user.js
-var template = require('../tabbar/tabbar.js');
 Page({
 
   /**
@@ -16,7 +15,6 @@ Page({
     wx.setNavigationBarTitle({
       title: '个人中心'
     })
-    template.tabbar("tabBar", 3, this);
   },
 
   /**
@@ -70,6 +68,11 @@ Page({
   kefu: function() {
     wx.makePhoneCall({
       phoneNumber: '18980780016' //仅为示例，并非真实的电话号码
+    })
+  },
+  orders_page: function() {
+    wx.navigateTo({
+      url: '../orders/orders',
     })
   }
 })

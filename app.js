@@ -43,7 +43,7 @@ App({
         id: 'FOOD',
         name: '美食',
         current: false,
-        desc: 'Handpicked activities just for you', loading: false,
+        desc: '精选食物与私房贡献', loading: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_FOOD.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/FOOD.jpg',
         img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/FOOD.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
@@ -52,7 +52,7 @@ App({
       {
         id: 'NATURAL_LIFE',
         name: '自然生活',
-        desc: 'Handpicked activities just for you',
+        desc: '让生活回归山野',
         current: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_NATURAL_LIFE.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/NATURAL_LIFE.jpg',
@@ -62,7 +62,7 @@ App({
       {
         id: 'SPORT',
         name: '景点',
-        desc: 'Handpicked activities just for you',
+        desc: '去景点玩也有趣',
         current: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_SPORT.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/SPORT.jpg',
@@ -72,7 +72,7 @@ App({
       {
         id: 'CULTURE_AND_THEME',
         name: '文化与主题',
-        desc: 'Handpicked activities just for you',
+        desc: '琴棋书画诗酒茶',
         current: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_CULTURE_AND_THEME.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/CULTURE_AND_THEME.jpg',
@@ -82,7 +82,7 @@ App({
       {
         id: 'PERFORM',
         name: '表演',
-        desc: 'Handpicked activities just for you',
+        desc: '每一种传承都是祖先的智慧',
         current: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_PERFORM.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/PERFORM.jpg',
@@ -92,7 +92,7 @@ App({
       {
         id: 'MUSIC',
         name: '音乐会',
-        desc: 'Handpicked activities just for you',
+        desc: '感受情感中枢的颤抖',
         current: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_MUSIC.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MUSIC.jpg',
@@ -102,7 +102,7 @@ App({
       {
         id: 'MOTION',
         name: '运动',
-        desc: 'Handpicked activities just for you',
+        desc: '体验各种生命的源泉',
         current: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_MOTION.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MOTION.jpg',
