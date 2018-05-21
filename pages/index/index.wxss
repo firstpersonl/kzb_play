@@ -19,9 +19,9 @@
   /* background-color: #ccc; */
   margin-bottom: 2px;
 }
-.main_app > .types:last-child{
+/* .main_app > .types:last-child{
     flex-grow: 1;
-}
+} */
 .types > navigator{
   position: relative;
   width: 100%;

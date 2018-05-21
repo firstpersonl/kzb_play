@@ -1,9 +1,9 @@
 <import src="../../template/page_types/page_types.wxml"/>
-<view class='list_wrap'>
+<view class='list_wrap' >
   <view class='list_wrap_'>
     <template is="PageTypes" data="{{hotList:bindData.types,scrollLeft: scrollLeft}}">
     </template>
-    <view class='play_list'>
+    <view class='play_list' animation="{{animationData}}">
       
       <navigator url='../detail/detail?partyId={{item.partyId}}' hover-class='none' wx:for="{{dataLists}}" wx:key="{{index}}">
       <view class="play">

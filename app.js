@@ -18,7 +18,6 @@ App({
             })
           }
         })
-        console.log(res)
       }
     });
     let citys = [];
@@ -39,6 +38,16 @@ App({
     userInfo: null,
     address: 'sc_cd',
     categorys: [
+      {
+        id: 'CULTURE_AND_THEME',
+        name: '文化与主题',
+        desc: '琴棋书画诗酒茶',
+        current: false,
+        list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_CULTURE_AND_THEME.jpg',
+        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/CULTURE_AND_THEME.jpg',
+        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/CULTURE_AND_THEME.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
+        total: 0
+      },
       {
         id: 'FOOD',
         name: '美食',
@@ -70,16 +79,6 @@ App({
         total: 0
       },
       {
-        id: 'CULTURE_AND_THEME',
-        name: '文化与主题',
-        desc: '琴棋书画诗酒茶',
-        current: false,
-        list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_CULTURE_AND_THEME.jpg',
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/CULTURE_AND_THEME.jpg',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/CULTURE_AND_THEME.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
-        total:0
-      },
-      {
         id: 'PERFORM',
         name: '表演',
         desc: '每一种传承都是祖先的智慧',
@@ -88,27 +87,27 @@ App({
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/PERFORM.jpg',
         img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/PERFORM.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
         total: 0
-      },
-      {
-        id: 'MUSIC',
-        name: '音乐会',
-        desc: '感受情感中枢的颤抖',
-        current: false,
-        list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_MUSIC.jpg',
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MUSIC.jpg',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MUSIC.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
-        total: 0
-      },
-      {
-        id: 'MOTION',
-        name: '运动',
-        desc: '体验各种生命的源泉',
-        current: false,
-        list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_MOTION.jpg',
-        img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MOTION.jpg',
-        img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MOTION.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
-        total: 0
       }
+      // {
+      //   id: 'MUSIC',
+      //   name: '音乐会',
+      //   desc: '感受情感中枢的颤抖',
+      //   current: false,
+      //   list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_MUSIC.jpg',
+      //   img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MUSIC.jpg',
+      //   img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MUSIC.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
+      //   total: 0
+      // },
+      // {
+      //   id: 'MOTION',
+      //   name: '运动',
+      //   desc: '体验各种生命的源泉',
+      //   current: false,
+      //   list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_MOTION.jpg',
+      //   img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MOTION.jpg',
+      //   img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/MOTION.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',
+      //   total: 0
+      // }
     ]
   }
 })

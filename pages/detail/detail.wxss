@@ -24,9 +24,9 @@
     display: block;
     margin: 0 auto;
 }
-.swiper{
-   height: 400rpx;
-}
+ .swiper{
+   height: 450rpx;
+} 
 .party_content{
   padding: 15px;
 }

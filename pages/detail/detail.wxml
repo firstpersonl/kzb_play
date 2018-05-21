@@ -4,11 +4,12 @@
     autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
     <block wx:for="{{imgUrls}}">
       <swiper-item>
-        <image src="{{item}}" class="slide-image"/>
+        <image src="{{item}}" mode ="aspectFill" class="slide-image"/>
       </swiper-item>
     </block>
   </swiper>
-  <view class='price'><view>￥{{party.price}}</view></view>
+  <view class='price'><view>￥{{party.price}}</view>
+  </view>
   <view class='play_favoter' bindtap='favoter'><view><icon class="iconfont icon-fenxiang"></icon></view><icon class='iconfont icon-shoucang'></icon></view>
 </view>
 <view class='party_content'>
@@ -21,27 +22,27 @@
     <view class="margin-sm-top margin-sm-bottom br"></view>
     <view><icon class='iconfont icon-dizhiguanli ensure_icon'></icon>地区：{{party.address}}</view>
     <view><icon class='iconfont icon-shijian ensure_icon'></icon>时间：{{party.partyTime}}</view>
-    <view><icon class='iconfont icon-dingdan ensure_icon'></icon>取消：提前24小时</view>
+    <!-- <view><icon class='iconfont icon-dingdan ensure_icon'></icon>取消：提前24小时</view> -->
   </view>
   <view class='desc'>
     <view class='you_will_do'>你会做什么</view>
     <view class='desc_title'>
       <view class='ul'>
-        <view class='li'>{{party.youWillDo}}</view>
+        <view class='li'><text>{{party.youWillDo}}</text></view>
       </view>
     </view>
     <view class="margin-sm-top margin-sm-bottom br"></view>
     <view class='you_will_do'>包含内容</view>
     <view class='desc_title'>
       <view class='ul'>
-        <view class='li'>{{party.includes}}</view>
+        <view class='li'><text>{{party.includes}}</text></view>
       </view>
     </view>
     <view class="margin-sm-top margin-sm-bottom br"></view>
     <view class='you_will_do'>附加信息</view>
     <view class='desc_title'>
       <view class='ul'>
-        <view class='li'>{{party.attentions}}</view>
+        <view class='li'><text>{{party.attentions}}</text></view>
       </view>
     </view>
   </view>

@@ -28,11 +28,10 @@ Page({
     }, 2000)
   },
   onLoad: function() {
-    this.loadTypeCount();
     template.tabbar("tabBar", 0, this);//0表示第一个tabbar
   },
   onShow: function () {
-
+    this.loadTypeCount();
   },
   onShareAppMessage: function (res) {
     if (res.from === 'button') {
@@ -50,27 +49,11 @@ Page({
       }
     }
   },
-  onReady: function () {
-    // Do something when page ready.
-  },
-
-  onHide: function () {
-    // Do something when page hide.
-    console.log("onHide")
-  },
-  onUnload: function () {
-    // Do something when page close.
-    console.log("onUnload")
-  },
-  onPullDownRefresh: function () {
-    // Do something when pull down
-    console.log("onPullDownRefresh")
-  },
   loadTypeCount: function() {
     // 加载玩法分类数量统计
     let typeCounts = [];
     const that = this;
-    var citys = wx.getStorageSync('citys');
+    var citys = wx.getStorageSync('citys') || {id: "sc_cd",cityName: "成都"};
     that.setData({
       citys: citys
     })
@@ -81,7 +64,6 @@ Page({
       },
       success: function (result) {
         typeCounts = result.data;
-        console.log("app.js:" + typeCounts);
         var category = app.globalData.categorys;
         category.forEach(item => {
           if (typeCounts.length == 0) {
