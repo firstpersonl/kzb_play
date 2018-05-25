@@ -9,7 +9,8 @@
     "pages/booknow/booknow",
     "pages/tickets/tickets",
     "pages/pay/pay_success",
-    "pages/orders/orders"
+    "pages/orders/orders",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

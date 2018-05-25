@@ -95,5 +95,10 @@ Page({
         })
       }
     });
+  },
+  toSerachPage: function() {
+    wx.navigateTo({
+      url: '/pages/search/search',
+    })
   }
 })

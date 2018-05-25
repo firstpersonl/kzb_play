@@ -109,11 +109,20 @@ Page({
     var sessionId;
     if(!that.data.phone) {
       wx.showToast({
-        title: '输入电话号码',
+        title: '请输入电话号码',
         icon: 'none',
         duration: 2000
       })
-      that.bindFocus();
+      that.bindFocus('phone');
+      return;
+    }
+    if (!that.data.userName) {
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'none',
+        duration: 2000
+      })
+      that.bindFocus('userName');
       return;
     }
     if (!(/^1[34578]\d{9}$/.test(that.data.phone))){
@@ -122,6 +131,7 @@ Page({
         icon: 'none',
         duration: 2000
       })
+      that.bindFocus('phone');
       return;
     }
     wx.getStorage({
@@ -138,6 +148,7 @@ Page({
             sessionId: sessionId,
             partyId: that.data.selectDay.partyId,
             phone: that.data.phone,
+            userName: that.data.userName,
             number: that.data.totalTickets,
             selectTime: '' + that.data.selectDay.year +'-'+ (that.data.selectDay.month < 10 ? '0' + that.data.selectDay.month : '' + that.data.selectDay.month) +'-'+ (that.data.selectDay.day < 10 ? '0' + that.data.selectDay.day : that.data.selectDay.day)+' 00:00:00',
             dayId: that.data.selectDay.id
@@ -171,9 +182,21 @@ Page({
       phone: e.detail.value
     })
   },
-  bindFocus: function() {
+  bindUserNameInput: function(e) {
     this.setData({
-      focus: true
+      userName: e.detail.value
     })
+  },
+  bindFocus: function(objectName) {
+    if (objectName == 'phone') {
+      this.setData({
+        focus: true
+      })
+    }else{
+      this.setData({
+        nameFocus: true
+      })
+    }
+    
   }
 })

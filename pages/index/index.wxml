@@ -9,7 +9,7 @@
       </picker>
     </view>
     <view class='top_bar_s'>
-      <input type='text'></input>
+      <input type='text' disabled="true" bindtap='toSerachPage'></input>
       <view class='input_i'>
       <icon class='iconfont icon-sousuo'></icon>
       </view>
