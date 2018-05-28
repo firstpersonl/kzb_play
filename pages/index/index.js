@@ -53,7 +53,7 @@ Page({
     // 加载玩法分类数量统计
     let typeCounts = [];
     const that = this;
-    var citys = wx.getStorageSync('citys') || {id: "sc_cd",cityName: "成都"};
+    var citys = wx.getStorageSync('citys') || [{id: "sc_cd",cityName: "成都"}];
     that.setData({
       citys: citys
     })

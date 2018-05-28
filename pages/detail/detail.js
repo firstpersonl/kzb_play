@@ -8,13 +8,36 @@ Page({
     interval: 3000,
     duration: 500,
     partyId: null,
-    party: {}
+    party: {},
+    bookings: []
   },
   regionchange(e) {
     console.log(e.type)
   },
   markertap(e) {
     console.log(e.markerId)
+  },
+  selectDay: function (event) {
+    console.log(event);
+    var seleteDay = {};
+    seleteDay.day = event.currentTarget.dataset.item.day;
+    seleteDay.choosed = true;
+    seleteDay.year = Number(event.currentTarget.dataset.item.date.split("-")[0]);
+    seleteDay.month = Number(event.currentTarget.dataset.item.date.split("-")[1]);
+    seleteDay.day = Number(event.currentTarget.dataset.item.date.split("-")[2]);
+    seleteDay.sureNumber = event.currentTarget.dataset.item.sureNumber;
+    seleteDay.price = event.currentTarget.dataset.item.price;
+    seleteDay.partyId = event.currentTarget.dataset.item.partyId;
+    seleteDay.id = event.currentTarget.dataset.item.id
+    seleteDay.disable = false;
+
+    wx.setStorage({
+      key: 'selectDay',
+      data: seleteDay
+    })
+    wx.navigateTo({
+      url: '../booknow/booknow?partyId=' + this.data.partyId
+    })
   },
   controltap(e) {
     console.log(e.controlId)
@@ -81,6 +104,17 @@ Page({
           }
         })
       }
+    });
+    wx.request({
+      url: app.globalData.BASE_PATH + '/mini_data/schedule/bookingDays.htm',
+      data: {
+        partyId: that.data.partyId
+      },
+      success: function(res) {
+        that.setData({
+          bookings: res.data
+        })
+      }
     })
   },
   onShareAppMessage: function () {
@@ -118,5 +152,4 @@ Page({
       }
     })
   }
-
 })

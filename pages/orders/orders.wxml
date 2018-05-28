@@ -1,0 +1,8 @@
+<view class='wrap'>
+  <view class='order' wx:for="{{orders}}" wx:item='item' wx:key="{{item.order.orderId}}">
+    <view><icon class='iconfont icon-emptyblank'></icon>{{item.party.partyName}}</view>
+    <view><icon class='iconfont icon-shijian'></icon>{{item.order.playTime}}</view>
+    <view><icon class='iconfont icon-dizhiguanli'></icon>{{item.party.address}}</view>
+     <view><icon class='iconfont icon-weibiaoti-'></icon>{{item.party.phone}}</view>
+  </view>
+</view>

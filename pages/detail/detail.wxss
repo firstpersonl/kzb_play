@@ -10,7 +10,6 @@
   position: absolute;
   right: 15px;
   bottom: 15px;
-  background-color: rgba(0,0,0,.5);
 }
 .price view{
   color: #FFF200;
@@ -112,4 +111,35 @@
   right:15px;
   top:15px;
   color: #FFF200;
+}
+.booking_t{
+  font-size: 32rpx;
+}
+.booking_t icon{
+  padding-right: 25rpx;
+  color: #fff200;
+}
+.days_wrap{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  width: 100%;
+  overflow-x: scroll;
+  margin: 20rpx 0;
+  -webkit-overflow-scrolling: touch;
+  
+}
+.days_wrap .day_item{
+  padding: 15rpx 20rpx;
+  background-color: #fff200;
+  color: #000;
+  font-size: 35rpx;
+  margin: 0 10rpx;
+  border-radius: 10rpx;
+  display: inline-block;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
 }

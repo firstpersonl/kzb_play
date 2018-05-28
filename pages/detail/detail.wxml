@@ -10,11 +10,21 @@
   </swiper>
   <view class='price'><view>￥{{party.price}}</view>
   </view>
-  <view class='play_favoter' bindtap='favoter'><view><icon class="iconfont icon-fenxiang"></icon></view><icon class='iconfont icon-shoucang'></icon></view>
+  <view class='play_favoter' bindtap='favoter'><view></view><icon class='iconfont icon-shoucang'></icon></view>
 </view>
 <view class='party_content'>
   <view class="party_title">{{party.partyName}}</view>
   <view class="party_story">{{party.descStr}}</view>
+  <view class="margin-sm-top margin-sm-bottom br"></view>
+  <view class='bookingDays'>
+    <view class='booking_t'><icon class='iconfont icon-yanchurili'></icon>可预订时间</view>
+    <view class='days_wrap'>
+      <view class='day_item' wx:for="{{bookings}}" wx:key="{{index}}">
+        <view data-item="{{item}}" bindtap="selectDay">{{item.date}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="margin-sm-top margin-sm-bottom br"></view>
   <view class='ensure'>
     <view class='ensure_t'>我们向你保证</view>
     <view><icon class='iconfont icon-dingyue ensure_icon'></icon>即时预定</view>

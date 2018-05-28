@@ -1,0 +1,22 @@
+<view class='wrap'>
+  <view class='fixed-top'>
+    <input class='serach-input' value='{{keyword}}' bindinput='bindKeyInput' focus='{{focus}}' type='text'></input>
+  </view>
+  <view class='play_list'>
+    <navigator url='../detail/detail?partyId={{item.partyId}}' hover-class='none' wx:for="{{dataLists}}" wx:key="{{index}}">
+      <view class="play">
+          <!-- <view class='img' style="background-image: url({{item.ossImage[0].src}}?x-oss-process=image/quality,Q_80);background-size: cover;"></view> -->
+          <image src='{{item.ossImage[0].src}}' class='play_img'></image>
+          <view class='img_cover'>
+            <view class='cover_desc'>
+              <view class="play_price">{{item.price}}￥</view>
+              <view class='play_title'>{{item.partyName}}</view>
+            </view>
+          </view>
+      </view>
+      </navigator>
+      <view wx:if='{{LoadingComplete}}' class='isEmpty'>
+        没有匹配的玩法
+      </view>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+/* pages/orders/orders.wxss */
+.wrap{
+  background-color: #000;
+  color: #fff;
+  padding: 15px;
+  box-sizing: border-box;
+  min-height: 100vh;
+  font-size:32rpx;
+}
+.order {
+  border-bottom: solid 1px #ccc;
+  padding: 15rpx;
+}
+.order icon{
+  color: #fff200;
+  padding-right: 20rpx;
+}

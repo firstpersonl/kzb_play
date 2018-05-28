@@ -1,0 +1,7 @@
+<!--pages/pay/pay_success.wxml-->
+<view class='wrap'>
+  <view class='title'><icon class='iconfont icon-chenggong'></icon>预定成功</view>
+  <view>
+    <button class='to_billing' bindtap='toIndex'>返回首页</button>
+  </view>
+</view>
