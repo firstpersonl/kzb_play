@@ -2,6 +2,8 @@
 .wrap_detail{
   background: #000;
   color: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 .swiper_wrap{
   position: relative;
@@ -65,9 +67,6 @@
   color: #fff200;
   padding-right: 25rpx; 
 }
-.desc{
-  
-}
 .you_will_do{
   color: #fff;
   font-weight: 600;
@@ -121,22 +120,30 @@
 }
 .days_wrap{
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  width: 100%;
   overflow-x: scroll;
   margin: 20rpx 0;
   -webkit-overflow-scrolling: touch;
-  
+  flex-wrap: nowrap;
+  white-space:nowrap;
+  box-sizing:border-box;
+
+}
+.bookingDays{
+  width: 100%;
 }
 .days_wrap .day_item{
   padding: 15rpx 20rpx;
   background-color: #fff200;
   color: #000;
-  font-size: 35rpx;
+  display: inline-block;
+  font-size: 30rpx;
   margin: 0 10rpx;
   border-radius: 10rpx;
-  display: inline-block;
+  width: 25%;
+  text-align: center;
+}
+.days_wrap .day_item view{
+  width: 100%;
 }
 ::-webkit-scrollbar {
   width: 0;

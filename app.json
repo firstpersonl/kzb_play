@@ -10,7 +10,8 @@
     "pages/tickets/tickets",
     "pages/pay/pay_success",
     "pages/orders/orders",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/discountCard/discount"
   ],
   "window": {
     "backgroundTextStyle": "light",

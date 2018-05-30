@@ -17,7 +17,7 @@
 </view>
 
 <view class='computer'>
-  <view><text>姓名：</text><input type='number' value='{{userName}}' focus='{{nameFocus}}' bindinput='bindUserNameInput' class='phone'></input></view>
+  <view><text>姓名：</text><input type='text' value='{{userName}}' focus='{{nameFocus}}' bindinput='bindUserNameInput' class='phone'></input></view>
 </view>
 
 <view>

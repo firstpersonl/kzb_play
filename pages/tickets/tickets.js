@@ -181,6 +181,30 @@ Page({
     this.setData({
       phone: e.detail.value
     })
+    // var phoen = this.data.phone;
+    // if (/^1[34578]\d{9}$/.test(phoen)){
+    //   wx.request({
+    //     url: 'http://www.kezhanbang.cn/room-order/validate/' + phoen+'.htm',
+    //     method: 'post',
+    //     success: function(res) {
+    //       if (res.data.status != 'success') {
+    //         wx.showModal({
+    //           title: '加入栖居族',
+    //           content: '加入栖居族，玩法和客栈下单都有优惠哟。',
+    //           success: function (res) {
+    //             if (res.confirm) {
+    //               wx.navigateTo({
+    //                 url: '../discountCard/discount',
+    //               })
+    //             } else if (res.cancel) {
+    //               console.log('用户取消栖居卡购买。')
+    //             }
+    //           }
+    //         })
+    //       }
+    //     }
+    //   })
+    // }
   },
   bindUserNameInput: function(e) {
     this.setData({

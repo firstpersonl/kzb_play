@@ -16,13 +16,16 @@
   <view class="party_title">{{party.partyName}}</view>
   <view class="party_story">{{party.descStr}}</view>
   <view class="margin-sm-top margin-sm-bottom br"></view>
-  <view class='bookingDays'>
+   <view class='bookingDays'>
     <view class='booking_t'><icon class='iconfont icon-yanchurili'></icon>可预订时间</view>
-    <view class='days_wrap'>
-      <view class='day_item' wx:for="{{bookings}}" wx:key="{{index}}">
-        <view data-item="{{item}}" bindtap="selectDay">{{item.date}}</view>
+    <scroll-view scroll-x scroll-left="0" class='days_wrap'>
+      <view class='day_item' wx:for="{{bookings}}" wx:key="{{index}}"  data-item="{{item}}" bindtap="selectDay">
+        {{item.date}}
       </view>
-    </view>
+      <view class='day_item' wx:if="{{bookings.length > 3}}">
+        <navigator url='../booknow/booknow?partyId={{party.partyId}}'>更多时间</navigator>
+      </view>
+    </scroll-view>
   </view>
   <view class="margin-sm-top margin-sm-bottom br"></view>
   <view class='ensure'>
