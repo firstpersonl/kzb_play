@@ -17,12 +17,19 @@ function tabbarinit() {
     //   "text": "地方"
 
     // },
+    // {
+    //   "current": 0,
+    //   "pagePath": "/pages/favoter/favoter",
+    //   "iconPath": "/images/favoter.png",
+    //   "selectedIconPath": "/images/favoter_c.png",
+    //   "text": "收藏"
+    // },
     {
       "current": 0,
-      "pagePath": "/pages/favoter/favoter",
-      "iconPath": "/images/favoter.png",
-      "selectedIconPath": "/images/favoter_c.png",
-      "text": "收藏"
+      "pagePath": "/pages/play/play",
+      "iconPath": "/images/play.png",
+      "selectedIconPath": "/images/play_c.png",
+      "text": "今日玩法"
     },
     {
       "current": 0,

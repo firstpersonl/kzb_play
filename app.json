@@ -1,9 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/play/play",
+    "pages/user/user",
     "pages/favoter/favoter",
     "pages/address/address",
-    "pages/user/user",
     "pages/detail/detail",
     "pages/list/category_list",
     "pages/booknow/booknow",
@@ -11,7 +12,8 @@
     "pages/pay/pay_success",
     "pages/orders/orders",
     "pages/search/search",
-    "pages/discountCard/discount"
+    "pages/discountCard/discount",
+    "pages/partys/partys"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,5 +21,30 @@
     "navigationBarTitleText": "诗意生活与有趣玩法",
     "navigationBarTextStyle": "white",
     "navigationBarTextAling": "left"
+  },
+  "tabBar": {
+    "color": "#ffffff",
+    "selectedColor": "#fff200",
+    "backgroundColor": "#000000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/category.png",
+        "selectedIconPath": "/images/category_c.png",
+        "text": "发现"
+      },
+      {
+        "pagePath": "pages/play/play",
+        "iconPath": "/images/play.png",
+        "selectedIconPath": "/images/play_c.png",
+        "text": "今日玩法"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "/images/user.png",
+        "selectedIconPath": "/images/user_c.png",
+        "text": "我的"
+      }
+    ]
   }
 }

@@ -154,15 +154,17 @@ const conf = {
 	 * @param {number} month  月份
 	 */
   calculateDays(year, month, curDate) {
+    const config = this.config;
     let days = [];
     let sureDays = [];
     const that = this;
+    var url = config.loadDataPath || app.globalData.BASE_PATH + '/mini_data/getDays.htm';
     wx.showLoading({
       title: '加载中',
       mask: true
     })
     wx.request({
-      url: app.globalData.BASE_PATH + '/mini_data/getDays.htm',
+      url: url,
       data: {
         partyId: that.data.partyId,
         month: month,
@@ -233,6 +235,7 @@ const conf = {
     let newMonth = curMonth - 1;
     let newYear = curYear;
     if (newMonth < 1) {
+      return;
       newYear = curYear - 1;
       newMonth = 12;
     }
@@ -252,6 +255,7 @@ const conf = {
     let newMonth = curMonth + 1;
     let newYear = curYear;
     if (newMonth > 12) {
+      return;
       newYear = curYear + 1;
       newMonth = 1;
     }

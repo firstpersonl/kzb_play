@@ -8,12 +8,13 @@
       </swiper-item>
     </block>
   </swiper>
-  <view class='price'><view>￥{{party.price}}</view>
+  <view class='name_wrap'>
+    <view class="party_title">{{party.partyName}}</view>
+    <view class='price'>￥{{party.price}}</view>
   </view>
   <view class='play_favoter' bindtap='favoter'><view></view><icon class='iconfont icon-shoucang'></icon></view>
 </view>
 <view class='party_content'>
-  <view class="party_title">{{party.partyName}}</view>
   <view class="party_story">{{party.descStr}}</view>
   <view class="margin-sm-top margin-sm-bottom br"></view>
    <view class='bookingDays'>

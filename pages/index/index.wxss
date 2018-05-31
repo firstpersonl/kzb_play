@@ -7,7 +7,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: calc(100rpx - 2px);
 }
 
 .first_types{

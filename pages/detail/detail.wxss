@@ -8,17 +8,24 @@
 .swiper_wrap{
   position: relative;
 }
-.price{
+.name_wrap{
   position: absolute;
-  right: 15px;
-  bottom: 15px;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  background: -webkit-linear-gradient(top,rgba(85,85,85, 0) 0%, rgba(0, 0, 0, 1) 100%);
 }
-.price view{
+.party_title{
+  font-size: 35rpx;
+  color: #fff;
+  display: inline-block;
+  width: 85%;
+}
+.price{
+  display: inline-block;
+  width: 15%;
   color: #FFF200;
-  font-size: 50rpx; 
-  padding: 5px 5px;
-  border-radius: 5px;
-  border: 1px solid inherit;
 }
 .slide-image{
     width: 100%;
@@ -29,7 +36,7 @@
    height: 450rpx;
 } 
 .party_content{
-  padding: 15px;
+  padding: 0 15px 15px;
 }
 .margin-sm-top{
   margin-top: 1em;
@@ -42,12 +49,6 @@
     padding: 5px 0;
     border-top: 1px solid #CCC;
     opacity: .5;
-}
-.party_title{
-  font-weight: bold;
-  font-size: 35rpx;
-  color: #fff;
-  margin-bottom: 0.5rem;
 }
 .party_story{
   color: #fff;

@@ -32,6 +32,6 @@
       </navigator>
     </view>
   </view>
-<template is="tabBar" data="{{tabBar:bindData.tabBar}}"/>
+<!-- <template is="tabBar" data="{{tabBar:bindData.tabBar}}"/> -->
 </view>
 </view>

@@ -1,7 +1,7 @@
 //index.js
 //引入图片预加载组件
 const ImgLoader = require('../../utils/img-loader.js')
-var template = require('../tabbar/tabbar.js');
+// var template = require('../tabbar/tabbar.js');
 
 //获取应用实例
 const app = getApp()
@@ -28,7 +28,7 @@ Page({
     }, 2000)
   },
   onLoad: function() {
-    template.tabbar("tabBar", 0, this);//0表示第一个tabbar
+    // template.tabbar("tabBar", 0, this);//0表示第一个tabbar
   },
   onShow: function () {
     this.loadTypeCount();

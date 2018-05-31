@@ -1,0 +1,5 @@
+@import '../../template/calendar/index.wxss';
+.ad_text{
+  color: #fff;
+  padding: 15px;
+}

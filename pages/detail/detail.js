@@ -48,7 +48,6 @@ Page({
     })
   },
   onLoad: function(options) {
-    console.log(1)
     this.setData({
       partyId: options.partyId
     })

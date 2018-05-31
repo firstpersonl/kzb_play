@@ -1,0 +1,9 @@
+<import src="../../template/calendar/index.wxml"/>
+<view class='page_wrap' style='background:#000;min-height:100vh;'>
+  <view class='ad_text'>
+    <text>选一个您想出行的时间，发现一个有趣的玩法。</text>
+  </view>
+  <view class="calendar-wrap">
+    <template is="calendar" data="{{...calendar}}" />
+  </view>
+</view>
