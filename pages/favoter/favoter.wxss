@@ -68,3 +68,8 @@
   box-shadow: none;
   margin-bottom: 0;
 }
+.empty{
+  text-align: center;
+  color: #fff;
+  padding: 15px;
+}

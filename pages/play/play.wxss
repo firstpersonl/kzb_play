@@ -2,4 +2,10 @@
 .ad_text{
   color: #fff;
   padding: 15px;
+  font-size: 20rpx;
+  opacity: 0
+}
+.calendar-wrap{
+  padding-top: 40rpx;
+  transform:translateX(-1000px);
 }

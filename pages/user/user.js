@@ -74,5 +74,15 @@ Page({
     wx.navigateTo({
       url: '../orders/orders',
     })
+  },
+  orders_page: function() {
+    wx.navigateTo({
+      url: '../orders/orders',
+    })
+  }, 
+  favoter: function () {
+    wx.navigateTo({
+      url: '../favoter/favoter',
+    })
   }
 })

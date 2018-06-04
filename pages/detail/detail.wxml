@@ -39,7 +39,7 @@
     <!-- <view><icon class='iconfont icon-dingdan ensure_icon'></icon>取消：提前24小时</view> -->
   </view>
   <view class='desc'>
-    <view class='you_will_do'>你会做什么</view>
+    <view class='you_will_do'>你将收获</view>
     <view class='desc_title'>
       <view class='ul'>
         <view class='li'><text>{{party.youWillDo}}</text></view>

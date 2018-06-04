@@ -131,12 +131,16 @@ Page({
         cityId: app.globalData.address
       },
       success: function(result) {
-        if(result.data.length == 0) {
-          that.setData({
-            LoadingComplete: true
-          });
-        }
         var partys = result.data;
+        if(partys.length==0){
+          var all = that.data.dataLists;
+          if (all.length == 0) {
+            that.setData({
+              LoadingComplete: true
+            })
+          }
+        }
+
         wx.hideLoading();
         partys.forEach(item => {
           // that.loadImage(item);
@@ -151,10 +155,11 @@ Page({
               allPartys.push(item);
               that.setData({
                 dataLists: allPartys,
-              })
+              });
             }
           })
         })
+        
         that.setData({
           isHideLoadMore: true,
           startRow: that.data.startRow + 1

@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataLists: []
+    dataLists: [],
+    LoadingComplete: false
   },
 
   /**
@@ -21,6 +22,14 @@ Page({
       },
       success: function (res) {
         var favoters = res.data;
+        if (favoters.length == 0) {
+          var all = that.data.dataLists;
+          if (all.length == 0) {
+            that.setData({
+              LoadingComplete: true
+            })
+          }
+        }
         favoters.forEach(item => {
           wx.request({
             url: app.globalData.BASE_PATH + '/mini_data/party/findOneById.htm',

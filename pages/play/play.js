@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    animationData: {},
+    animationText: {}
   },
 
   /**
@@ -27,6 +28,60 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+    var animationtext = wx.createAnimation({
+      duration: 1500,
+      timingFunction: 'ease',
+    })
+
+    this.animation = animation;
+    animation.opacity(0).translateX(-1000).step();
+    this.setData({
+      animationData: animation.export()
+    });
+    setTimeout(function () {
+      animation.opacity(.5).translateX(-500).step();
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 500);
+    setTimeout(function () {
+      animation.opacity(1).translateX(0).step();
+      this.setData({
+        animationData: animation.export()
+      })
+    }.bind(this), 1000);
+
+    this.animationtext = animationtext;
+    animationtext.opacity(0).step();
+    this.setData({
+      animationText: animationtext.export()
+    });
+
+    setTimeout(function () {
+      animationtext.opacity(.3).step();
+      this.setData({
+        animationText: animationtext.export()
+      })
+    }.bind(this), 500);
+
+    setTimeout(function () {
+      animationtext.opacity(.7).step();
+      this.setData({
+        animationText: animationtext.export()
+      })
+    }.bind(this), 1000);
+
+    setTimeout(function () {
+      animationtext.opacity(1).step();
+      this.setData({
+        animationText: animationtext.export()
+      })
+    }.bind(this), 1500);
+
     const that = this;
     initCalendar({
       disablePastDay: true, // 是否禁选过去日期
@@ -66,7 +121,19 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    var animation = wx.createAnimation({
+      duration: 1000,
+      timingFunction: 'ease',
+    })
+    this.animation = animation;
+    animation.opacity(0).translateX(-1000).step();
+    this.setData({
+      animationData: animation.export()
+    });
+    animation.opacity(0).translateX(0).step();
+    this.setData({
+      animationText: animation.export()
+    });
   },
 
   /**

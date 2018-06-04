@@ -17,6 +17,9 @@
       </view>
       </navigator>
     </view>
+    <view wx:if='{{LoadingComplete}}' class='empty'>
+        没有匹配的玩法
+      </view>
   </view>
 </view>
   

@@ -4,6 +4,7 @@
 <open-data type="userNickName" class="user_nickname"></open-data>
 <view class="user_list">
   <view bindtap='orders_page'><icon class="iconfont icon-dingdan icon_in_list"/>我的订单</view>
+  <view  bindtap='favoter'><icon class="iconfont icon-shoucang icon_in_list"/>我的收藏</view>
   <view  bindtap='kefu'><icon class="iconfont icon-kefu icon_in_list"/>联系客服</view>
 </view>
 
