@@ -19,7 +19,7 @@
   position: relative;
 }
 .play_list{
-  transform:translateX(-1000px);
+  /* transform:translateX(-1000px); */
 }
 .play_list navigator {
   width: 100%;
@@ -37,11 +37,15 @@
 .cover_desc{
   display: flex;
   padding: 10px;
+  background: -webkit-linear-gradient(bottom,rgba(85,85,85, 0) 0%, rgba(0, 0, 0, .8) 100%);
 }
 .cover_desc .play_title{
   width: 65%;
   color: #fff;
   padding: 0 10px;
+  font-size: 32rpx;
+  font-weight: bold;
+  line-height: 1.2
 }
 .cover_desc .play_price{
   border-right: 2px solid #f5f5f5;

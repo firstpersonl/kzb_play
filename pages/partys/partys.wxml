@@ -1,5 +1,5 @@
  <view style='min-height:100vh;background-color:#000;'>
- <view class='play_list' animation="{{animationData}}">
+ <view class='play_list'>
       <navigator url='../detail/detail?partyId={{item.partyId}}' hover-class='none' wx:for="{{dataLists}}" wx:key="{{index}}">
       <view class="play">
           <view class='img' style="background-image: url({{item.ossImage[0].src}}?x-oss-process=image/quality,Q_80);background-size: cover;"></view>

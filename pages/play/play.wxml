@@ -4,6 +4,6 @@
     <template is="calendar" data="{{...calendar}}" />
   </view>
   <view class='ad_text' animation="{{animationText}}">
-    说明：黄色框对应日期有玩法
+    说明：黄色框对应日期有玩法，请选择日期。
   </view>
 </view>
