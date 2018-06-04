@@ -53,6 +53,12 @@
   white-space: pre-wrap;
   max-width: 75%;
 }
+.category_text .name{
+  font-weight: bold;
+}
+.category_text .desc{
+  font-size: small;
+}
 .play_number{
   padding: 4rpx 10rpx;
   position: absolute;

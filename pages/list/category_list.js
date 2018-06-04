@@ -14,27 +14,27 @@ Page({
     animationData: {} 
   },
   onShow: function() {
-    var animation = wx.createAnimation({
-      duration: 1000,
-      timingFunction: 'ease',
-    })
-    this.animation = animation;
-    animation.opacity(0).translateX(-1000).step();
-    this.setData({
-      animationData: animation.export()
-    });
-    setTimeout(function () {
-      animation.opacity(.5).translateX(-500).step();
-      this.setData({
-        animationData: animation.export()
-      })
-    }.bind(this), 500);
-    setTimeout(function () {
-      animation.opacity(1).translateX(0).step();
-      this.setData({
-        animationData: animation.export()
-      })
-    }.bind(this), 1000);
+    // var animation = wx.createAnimation({
+    //   duration: 1000,
+    //   timingFunction: 'ease',
+    // })
+    // this.animation = animation;
+    // animation.opacity(0).translateX(-1000).step();
+    // this.setData({
+    //   animationData: animation.export()
+    // });
+    // setTimeout(function () {
+    //   animation.opacity(.5).translateX(-500).step();
+    //   this.setData({
+    //     animationData: animation.export()
+    //   })
+    // }.bind(this), 500);
+    // setTimeout(function () {
+    //   animation.opacity(1).translateX(0).step();
+    //   this.setData({
+    //     animationData: animation.export()
+    //   })
+    // }.bind(this), 1000);
   },
   /**
    * 生命周期函数--监听页面加载
@@ -140,8 +140,6 @@ Page({
             })
           }
         }
-
-        wx.hideLoading();
         partys.forEach(item => {
           // that.loadImage(item);
           wx.request({
@@ -157,9 +155,9 @@ Page({
                 dataLists: allPartys,
               });
             }
-          })
+          });
         })
-        
+        wx.hideLoading();
         that.setData({
           isHideLoadMore: true,
           startRow: that.data.startRow + 1
@@ -168,6 +166,6 @@ Page({
       fail: function() {
         wx.hideLoading();
       }
-    })
+    });
   }
 })

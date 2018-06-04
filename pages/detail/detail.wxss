@@ -4,6 +4,7 @@
   color: #fff;
   width: 100%;
   box-sizing: border-box;
+  position: relative;
 }
 .swiper_wrap{
   position: relative;
@@ -83,6 +84,7 @@
 }
 .book_now{
   position: sticky;
+  position: -webkit-sticky;
   bottom: 10px;
   background-color: #fff200;
   color: #000;
