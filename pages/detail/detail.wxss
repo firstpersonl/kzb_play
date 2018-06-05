@@ -13,20 +13,25 @@
   position: absolute;
   bottom: 0;
   width: 100%;
+  display: flex;
   padding: 15px;
   box-sizing: border-box;
   background: -webkit-linear-gradient(top,rgba(85,85,85, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  justify-content: space-between;
 }
 .party_title{
   font-size: 35rpx;
   color: #fff;
-  display: inline-block;
-  width: 85%;
+  display: flex;
+  font-weight: bold;
 }
 .price{
-  display: inline-block;
-  width: 15%;
+  display: flex;
+  width: 18%;
+  align-items: center;
   color: #FFF200;
+  font-weight: bold;
+  text-align: center;
 }
 .slide-image{
     width: 100%;
@@ -83,15 +88,14 @@
   margin-bottom: 10px;
 }
 .book_now{
-  position: sticky;
-  position: -webkit-sticky;
+  position: fixed;
   bottom: 10px;
   background-color: #fff200;
   color: #000;
   text-align: center;
   height: 50px;
   width: calc(100% - 30px);
-  margin: 0 auto;
+  margin: 0 15px;
   line-height: 50px;
   white-space: 2px;
   border-radius: 4px;
@@ -103,10 +107,9 @@
   background-color: #000;
 }
 .cell{
-  padding: 10px 15px 50px 15px;
+  padding: 0 15px 50px 15px;
   text-align: center;
   color: #fff200;
-  margin-left: -10px;
 }
 .play_favoter{
   position:absolute;

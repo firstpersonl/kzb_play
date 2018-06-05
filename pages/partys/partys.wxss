@@ -1,5 +1,5 @@
 .img {
-  height: 400rpx;
+  height: 450rpx;
 }
 .list_wrap_{
   background: rgba(0, 0, 0, 1);
@@ -12,9 +12,7 @@
   background-position: center center;
 }
 .play{
-  width: 98%;
-  margin: 0 auto;
-  
+  width: 100%;
   background: #000;
   position: relative;
 }
@@ -40,12 +38,12 @@
   background: -webkit-linear-gradient(bottom,rgba(85,85,85, 0) 0%, rgba(0, 0, 0, .8) 100%);
 }
 .cover_desc .play_title{
-  width: 65%;
   color: #fff;
   padding: 0 10px;
   font-size: 32rpx;
   font-weight: bold;
-  line-height: 1.2
+  display: flex;
+  align-items: center;
 }
 .cover_desc .play_price{
   border-right: 2px solid #f5f5f5;
@@ -54,6 +52,8 @@
   padding: 0 5px;
   font-size: 45rpx;
   width: 20%;
+  display: flex;
+  align-items: center;
 }
 .cover_desc .play_favoter{
   font-weight: bold;

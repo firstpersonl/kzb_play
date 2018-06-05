@@ -52,7 +52,7 @@ App({
         id: 'FOOD',
         name: '美食',
         current: false,
-        desc: '精选食物与私房贡献', loading: false,
+        desc: '精选食物与私房菜', loading: false,
         list_img: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/list_FOOD.jpg',
         img_url: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/FOOD.jpg',
         img_url_m: 'http://kzbpic.oss-cn-qingdao.aliyuncs.com/kzb_play/FOOD.jpg?x-oss-process=image/resize,m_lfit,h_20,w_20',

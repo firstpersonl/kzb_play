@@ -67,7 +67,7 @@
   </view>
   <view class="margin-sm-top margin-sm-bottom br"></view>
   <view class='cell'>
-    <view bindtap='phonecallevent'><icon class='iconfont icon-weibiaoti-' style='padding-right:10px;'></icon>拨打电话</view>
+    <view bindtap='phonecallevent' style='padding: 15px;'><icon class='iconfont icon-weibiaoti-' style='padding-right:10px;'></icon>拨打电话</view>
   </view>
 </view>
 <view class='book_now'><navigator url='../booknow/booknow?partyId={{party.partyId}}'>立即预定</navigator></view>

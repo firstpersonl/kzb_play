@@ -167,5 +167,21 @@ Page({
         wx.hideLoading();
       }
     });
+  },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: this.data.selectType.name,
+      path: '/pages/list/category_list?categoryId='+this.data.selectType.id,
+      success: function (res) {
+        // 转发成功
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
   }
 })

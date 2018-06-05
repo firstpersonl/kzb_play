@@ -71,9 +71,10 @@ Page({
           height: 40,
           callout: {
             content: '环球中心E6-1417',
+            bgColor: '#fff200',
             color: '#000',
             borderRadius: 4,
-            padding: 5,
+            padding: 5, 
             display: 'ALWAYS',
             textAlign: 'center'
           }
